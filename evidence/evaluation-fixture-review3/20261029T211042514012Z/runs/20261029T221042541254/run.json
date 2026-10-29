@@ -1,0 +1,38 @@
+{
+  "run_id": "20261029T221042541254",
+  "backend": "fixture",
+  "model": null,
+  "temperature": 0,
+  "num_predict": 800,
+  "timeout_seconds": 120,
+  "checked_at": "2026-10-29",
+  "elapsed_seconds": 0.001,
+  "raw_model_response": {},
+  "extracted_facts": {
+    "in_scope": true,
+    "proposal": {
+      "value": "Gangfelt ved Eksempelskolen",
+      "evidence": "gangfelt ved Eksempelskolen"
+    },
+    "location": {
+      "value": "Eksempelskolen",
+      "evidence": "ved Eksempelskolen"
+    },
+    "planning_stage": {
+      "value": "Oppstart av planarbeid",
+      "evidence": "Varsel om oppstart av planarbeid"
+    },
+    "deadline": {
+      "value": "2027-01-01",
+      "evidence": "fristen er 1. januar 2027"
+    },
+    "participation": {
+      "value": "unknown",
+      "evidence": ""
+    },
+    "response_route": {
+      "value": "unknown",
+      "evidence": ""
+    }
+  }
+}

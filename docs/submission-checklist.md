@@ -25,3 +25,6 @@ Canvas information supplied by Kai: Group 12; deadline 7 November 2026 at 23:59;
 - Confirm public repository access from a logged-out browser if desired.
 
 The prepared ZIP is a review bundle, not an automatically submitted assignment. No compulsory video is specified for this checkpoint. The mandatory live demonstration belongs to the later exam.
+# Current review note
+
+Use the root STUDENT_CHECKLIST.md for the current third-review draft and its eight explicit student markers. The latest changes are local only. The prepared submission folder is not approved for upload while those markers and the public-repository mismatch remain.

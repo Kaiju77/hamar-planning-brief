@@ -1,0 +1,17 @@
+{
+  "batch": "evidence/evaluation-extended/20261029T210826845602Z",
+  "runs": 5,
+  "drafts_saved": 5,
+  "total_tokens": 5108,
+  "wall_seconds_sum": 51.176,
+  "reference_proxy_counts": {
+    "deadline": 5,
+    "proposal": 5,
+    "location": 5,
+    "stage": 5,
+    "participation_office_day": 0,
+    "participation_date_time": 0,
+    "response_mailbox_and_case": 0,
+    "response_postal_address": 0
+  }
+}

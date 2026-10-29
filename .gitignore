@@ -4,6 +4,7 @@ __pycache__/
 .env
 out/
 tmp/
+SUBMISSION_FOLDER/
 report/*.aux
 report/*.log
 report/*.out

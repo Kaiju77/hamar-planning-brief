@@ -1,0 +1,97 @@
+{
+  "backend": "ollama",
+  "checked_at": "2026-10-29",
+  "cases": [
+    {
+      "case": "ringgata_extended",
+      "draft_saved": true,
+      "matches_fixture_behavior_expectation": true,
+      "deadline": "2026-11-18",
+      "known_unsafe_case": false,
+      "security_verdict": "not_assessed",
+      "reference_fields": {
+        "deadline": true,
+        "proposal": true,
+        "location": true,
+        "stage": true,
+        "participation_office_day": false,
+        "participation_date_time": false,
+        "response_mailbox_and_case": false,
+        "response_postal_address": false
+      }
+    },
+    {
+      "case": "ringgata_extended",
+      "draft_saved": true,
+      "matches_fixture_behavior_expectation": true,
+      "deadline": "2026-11-18",
+      "known_unsafe_case": false,
+      "security_verdict": "not_assessed",
+      "reference_fields": {
+        "deadline": true,
+        "proposal": true,
+        "location": true,
+        "stage": true,
+        "participation_office_day": false,
+        "participation_date_time": false,
+        "response_mailbox_and_case": false,
+        "response_postal_address": false
+      }
+    },
+    {
+      "case": "ringgata_extended",
+      "draft_saved": true,
+      "matches_fixture_behavior_expectation": true,
+      "deadline": "2026-11-18",
+      "known_unsafe_case": false,
+      "security_verdict": "not_assessed",
+      "reference_fields": {
+        "deadline": true,
+        "proposal": true,
+        "location": true,
+        "stage": true,
+        "participation_office_day": false,
+        "participation_date_time": false,
+        "response_mailbox_and_case": false,
+        "response_postal_address": false
+      }
+    },
+    {
+      "case": "ringgata_extended",
+      "draft_saved": true,
+      "matches_fixture_behavior_expectation": true,
+      "deadline": "2026-11-18",
+      "known_unsafe_case": false,
+      "security_verdict": "not_assessed",
+      "reference_fields": {
+        "deadline": true,
+        "proposal": true,
+        "location": true,
+        "stage": true,
+        "participation_office_day": false,
+        "participation_date_time": false,
+        "response_mailbox_and_case": false,
+        "response_postal_address": false
+      }
+    },
+    {
+      "case": "ringgata_extended",
+      "draft_saved": true,
+      "matches_fixture_behavior_expectation": true,
+      "deadline": "2026-11-18",
+      "known_unsafe_case": false,
+      "security_verdict": "not_assessed",
+      "reference_fields": {
+        "deadline": true,
+        "proposal": true,
+        "location": true,
+        "stage": true,
+        "participation_office_day": false,
+        "participation_date_time": false,
+        "response_mailbox_and_case": false,
+        "response_postal_address": false
+      }
+    }
+  ],
+  "note": "Reference word checks are narrow proxies, not semantic accuracy. Fixture outputs are canned; the known unsafe case is not a security success."
+}

@@ -4,7 +4,7 @@ Compulsory 2, KIUA-2003, Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A
 
 A small Python workflow turns selected planning-notice text into a Norwegian draft with field-level evidence, deadline status and an explicit human-review gate. It runs in four stages: load input, extract facts with a local model, format a draft, then check and save. It uses Python's standard library, files and Ollama's local HTTP API. One command performs all stages automatically. There is no automatic external publication.
 
-Status: a real-source walking skeleton and report editorial draft, prepared 28 October 2026. Kai supplied the Canvas deadline as **7 November 2026, 23:59**, superseding the earlier 30 October working assumption. Student source/output review, group contribution confirmation and editorial approval remain pending. See [demonstration and review guide](docs/DEMONSTRATION.md).
+Status: a working program and student-review draft, updated 29 October 2026. Deadline: **7 November 2026, 23:59**, Canvas file upload. Student source/output review, group contribution confirmation and editorial approval remain pending. The newest revision is local only, as requested; the public repository still has the earlier version. See STUDENT_CHECKLIST.md and docs/REVIEW3_HANDOFF.md.
 
 Public repository: https://github.com/Kaiju77/hamar-planning-brief
 
@@ -37,12 +37,13 @@ Each run saves an input/prompt snapshot, code hashes, raw model response and mea
 python -m unittest discover -s tests -v
 python evaluate.py --backend fixture
 python evaluate.py --backend ollama --count 5
+python evaluate.py --backend ollama --example ringgata_extended --count 5 --checked-at 2026-10-29
 python tools/build_results.py
 ```
 
 Twelve unit tests cover the seven original fixture cases and five added robustness cases, including an unavailable Ollama service. The fixture evaluation also deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
 
-`evaluate.py` preserves a separate batch and limits a real batch to at most five explicit runs. Its field-word reference checks are narrow proxies, not semantic accuracy. `tools/build_results.py` regenerates the report's table and metrics from the fixed final evidence batch, rather than silently replacing it with new results.
+`evaluate.py` preserves every attempt and limits a real batch to five runs. Its reference checks look for selected words and addresses, not full meaning. `tools/build_results.py` regenerates the report table from the two fixed saved batches. It does not replace them with newly run results.
 
 ## Evidence and project files
 
@@ -53,13 +54,14 @@ Twelve unit tests cover the seven original fixture cases and five added robustne
 - `fixtures/`: synthetic notices and canned model outputs.
 - `evidence/real/`: early exploratory runs, including a rejected Llama response.
 - `evidence/evaluation-final/`: final five-run Qwen batch with response-route extraction.
+- `evidence/evaluation-extended/`: five runs on the 61-word extract, including their missing participation/route content.
 - `evidence/evaluation-fixture/`: saved pipeline evaluation, including the known gap.
 - `evidence/final-metrics.json`: computed report measurements.
 - `report/`: report source and official unmodified NeurIPS 2025 style.
 - `output/pdf/compulsory2_report.pdf`: compiled editorial draft for student review.
 - `docs/`: source review, assistance record, working-session records and review guidance.
 
-The final five Qwen repetitions all saved mechanically valid drafts on the same 21-word partial input. This is not five different notices. A separate early Llama failure and five earlier Qwen successes are retained rather than mixed into the final batch.
+The first five Qwen repetitions saved drafts on the same 21-word input. Five new repetitions used a 61-word extract from the same notice. All five new drafts passed the code checks, but missed the office day and left response_route unknown. Submission details appeared under participation instead. They failed the content goal despite passing code checks. This is two inputs from one notice, not ten independent notices. Earlier attempts are kept separately.
 
 ## Operation limits and known gaps
 
@@ -69,7 +71,7 @@ The model cannot itself execute shell commands or publish output. Python still h
 
 Evidence matching ignores whitespace and case. It confirms that a passage occurs in the input, not that the passage supports the claim. Instruction-like text triggers a heuristic warning only. A model that adopts an injected date may produce a draft that passes; this is a documented open failure. Multiple-deadline ambiguity is addressed in instructions but not systematically evaluated. Precise cutoff times and source freshness need further work.
 
-The real input is three non-contiguous passages selected and checked by Codex, not a full notice or a completed student review. It omits the official response route and correctly yields unknown route/participation fields. No broad source-reuse license or permission to crawl has been established. No raw HTML or full source document is redistributed. See [source review](docs/source-review.md).
+The first real extract omits response details; the full page contains them. The second includes an institutional mailbox, postal address, case number and office day. Both were source-checked with AI assistance and still need student review. They are selected passages, not a full notice. No broad source-reuse or crawling permission has been established. No raw HTML or full source document is redistributed. See [source review](docs/source-review.md).
 
 ## Report and assistance
 

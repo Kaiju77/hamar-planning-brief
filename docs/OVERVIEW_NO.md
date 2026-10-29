@@ -54,3 +54,8 @@ Rapporten er et redaksjonelt utkast. Begge må lese, kontrollere og bearbeide te
 Et større testsett, virkelige feilinjeksjoner, dokumenterte reparasjoner og regresjonstester, tydeligere tilgangskontroll, samlet tokenbudsjett og en målbar stoppregel. Vi planlegger å teste både ondsinnet eller feilaktig input og svikt i modelltilkoblingen. Eksamen inkluderer live demonstrasjon i uke 46-47, en rapport på 7-8 hovedsider og minst åtte ekte møtereferater. Fristen for eksamensrapporten i oppgavebeskrivelsen er 3. desember 2026 kl. 11.59.
 
 Start gjennomgangen i docs/DEMONSTRATION.md. Åpne originalkilden og ett lagret utkast ved siden av hverandre før vi går gjennom koden.
+# Ny gjennomgang, 29. oktober
+
+Rapporten er skrevet om med enklere språk. Et nytt utdrag på 61 ord tar med kontordag og innsendingsvei. Fem nye kjøringer bestod kodekontrollene, men alle manglet kontordagen og lot response_route stå som unknown. Innsendingsdetaljene havnet under participation. Dette er en dokumentert innholdsfeil. De første resultatene er beholdt.
+
+Denne versjonen er bare lagret lokalt, etter siste beskjed. Før levering må studentene lese og redigere rapporten, fylle inn de markerte punktene, bekrefte bidrag og sjekke Canvas. Se STUDENT_CHECKLIST.md. Ikke lever rapporten med åpne markeringer.

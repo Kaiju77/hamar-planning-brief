@@ -7,7 +7,7 @@ import run
 
 ROOT = Path(__file__).resolve().parent
 
-def evaluate(backend='fixture', count=5, out='out/evaluation', checked_at='2026-10-28'):
+def evaluate(backend='fixture', count=5, out='out/evaluation', checked_at='2026-10-28', example='ringgata'):
     batch = Path(out) / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     batch.mkdir(parents=True)
     rows = []
@@ -15,7 +15,7 @@ def evaluate(backend='fixture', count=5, out='out/evaluation', checked_at='2026-
              ('syn_out_of_scope', True), ('syn_injection', False),
              ('syn_injection_followed', False), ('syn_bad_evidence', True)]
     if backend == 'ollama':
-        cases = [('ringgata', False)] * count
+        cases = [(example, False)] * count
     for name, expected_failure in cases:
         inputs = ROOT / ('examples' if backend == 'ollama' else 'fixtures')
         result = run.run(inputs/f'{name}.meta.json', inputs/f'{name}.txt', backend=backend,
@@ -34,6 +34,17 @@ def evaluate(backend='fixture', count=5, out='out/evaluation', checked_at='2026-
                 'participation_unknown': result['participation']['value'] == 'unknown',
                 'response_route_unknown': result['response_route']['value'] == 'unknown',
             }
+            if example == 'ringgata_extended':
+                row['reference_fields'].pop('participation_unknown')
+                row['reference_fields'].pop('response_route_unknown')
+                value = result['participation']['value'].lower()
+                route = result['response_route']['value'].lower()
+                row['reference_fields'].update({
+                    'participation_office_day': 'kontordag' in value,
+                    'participation_date_time': all(w in value for w in ('10.', 'november', '14', '18')),
+                    'response_mailbox_and_case': all(w in route for w in ('post@innlandetfylke.no', '2026/20689')),
+                    'response_postal_address': all(w in route for w in ('4404', '2325', 'hamar')),
+                })
         rows.append(row)
         print(json.dumps(row, ensure_ascii=True), flush=True)
     summary = {'backend': backend, 'checked_at': checked_at, 'cases': rows,
@@ -48,7 +59,8 @@ if __name__ == '__main__':
     parser.add_argument('--count',type=int,default=5)
     parser.add_argument('--out',default='out/evaluation')
     parser.add_argument('--checked-at',default='2026-10-28')
+    parser.add_argument('--example',choices=['ringgata','ringgata_extended'],default='ringgata')
     args=parser.parse_args()
     if not 1 <= args.count <= 5:
         parser.error('count must be between 1 and 5; rerun explicitly for further batches')
-    evaluate(args.backend,args.count,args.out,args.checked_at)
+    evaluate(args.backend,args.count,args.out,args.checked_at,args.example)

@@ -1,0 +1,17 @@
+test_malformed_deadlines_are_rejected_without_crashing (test_robustness.Robustness.test_malformed_deadlines_are_rejected_without_crashing) ... ok
+test_missing_input_creates_failure (test_robustness.Robustness.test_missing_input_creates_failure) ... ok
+test_ollama_unavailable_saves_failure_without_draft (test_robustness.Robustness.test_ollama_unavailable_saves_failure_without_draft) ... ok
+test_repeated_runs_preserve_both (test_robustness.Robustness.test_repeated_runs_preserve_both) ... ok
+test_status_boundaries_and_ambiguity (test_robustness.Robustness.test_status_boundaries_and_ambiguity) ... ok
+test_altered_evidence_fails (test_skeleton.T.test_altered_evidence_fails) ... ok
+test_ambiguous_date_preserved (test_skeleton.T.test_ambiguous_date_preserved) ... ok
+test_injection_absorbed_when_model_resists (test_skeleton.T.test_injection_absorbed_when_model_resists) ... ok
+test_known_gap_injection_followed_passes_exact_match (test_skeleton.T.test_known_gap_injection_followed_passes_exact_match) ... ok
+test_no_deadline_stays_unknown (test_skeleton.T.test_no_deadline_stays_unknown) ... ok
+test_ok (test_skeleton.T.test_ok) ... ok
+test_out_of_scope_rejected (test_skeleton.T.test_out_of_scope_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.201s
+
+OK
