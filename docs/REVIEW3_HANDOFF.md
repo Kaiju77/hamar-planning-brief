@@ -20,6 +20,13 @@ This local revision follows the supplied finishing checklist. It is not yet a fi
 - New metrics: evidence/extended-metrics.json (5,108 tokens; 51.176 seconds).
 - Original final metrics: evidence/final-metrics.json (3,645 tokens; 37.971 seconds).
 - The appendix evaluation-log.json is a byte-for-byte copy of the new summary.json.
+- Fresh local clone of 787df5b: 12 tests pass; README fixture and evaluation commands run; both table totals reproduce. Full output: evidence/clean-clone-review3.txt. This does not verify the new revision on public GitHub.
+- Compiled twice with MiKTeX. All eight pages rendered and visually inspected. Main text is pages 1 to 4, references start on page 5 and Appendix A occupies one page. Recheck after student edits.
+- Automated text scan found no em/en/nonbreaking dashes in the PDF, no common secret-key patterns or absolute personal paths in project text. This is a scan, not a guarantee. Author names and institutional contact details are intentional.
+
+## Local publication commands, not executed
+
+After student review and explicit authorization to publish, run `git status`, commit any student edits, then `git push origin main`. Verify a fresh clone from the public URL and update the commit hash in the submission text file. None of those publication steps were run for this revision.
 
 ## Things to judge
 

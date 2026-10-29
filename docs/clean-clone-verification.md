@@ -1,5 +1,11 @@
 # Clean-clone verification, 29 October 2026
 
+## Third-review local clone
+
+The latest unpublished revision was cloned from the local Git repository into a new empty folder at commit 787df5b815be2b9b981f36b2b7b1bd77a812e64c. Following the README, all 12 tests passed, the normal fixture command saved a draft, all seven fixture cases matched their expected behaviours (including the known unsafe acceptance), and the table builder reproduced both measured batches. Full console output is evidence/clean-clone-review3.txt.
+
+This was a fresh local clone on the same desktop, not a new public-GitHub clone, independent student review or different-machine test. The current revision was not pushed because the latest instruction says not to publish. The earlier public-clone checks below remain historical checks of their named commits. Publish the reviewed revision and repeat from GitHub before final submission.
+
 Source: fresh clone from https://github.com/Kaiju77/hamar-planning-brief.git at commit 5fd0379. The clone was placed in a new ignored temporary directory, without copying a virtual environment or caches. Verification used the desktop's existing Python and local Ollama service; this is not a different-machine or independent-student review.
 
 Observed outcomes:
