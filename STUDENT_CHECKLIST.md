@@ -35,11 +35,11 @@ Assistant verification of a claim does not tick off the student column. Keep the
 
 ## Report placeholders
 
-- [ ] report/main.tex:258 - [[STUDENT: one real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:261 - [[STUDENT: a second real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:267 - [[STUDENT: describe what Kai actually checked and changed after reading the report and code]]
-- [ ] report/main.tex:268 - [[STUDENT: describe Mohammad's actual contribution and review; do not claim work he has not done]]
-- [ ] report/main.tex:299 - [[STUDENT: actual meeting date, duration and attendees]]
-- [ ] report/main.tex:300 - [[STUDENT: what each person checked; options discussed; decision and reason; next actions]]
-- [ ] report/main.tex:323 - [[STUDENT: compare with the Canvas template and confirm accepted upload type]]
-- [ ] report/main.tex:324 - [[STUDENT: check both extracts and at least one saved draft against the live Hamar page]]
+- [ ] report/main.tex:259 - [[STUDENT: one real moment where you challenged or rejected agent output, with a short quote]]
+- [ ] report/main.tex:262 - [[STUDENT: a second real moment where you challenged or rejected agent output, with a short quote]]
+- [ ] report/main.tex:268 - [[STUDENT: describe what Kai actually checked and changed after reading the report and code]]
+- [ ] report/main.tex:269 - [[STUDENT: describe Mohammad's actual contribution and review; do not claim work he has not done]]
+- [ ] report/main.tex:300 - [[STUDENT: actual meeting date, duration and attendees]]
+- [ ] report/main.tex:301 - [[STUDENT: what each person checked; options discussed; decision and reason; next actions]]
+- [ ] report/main.tex:324 - [[STUDENT: compare with the Canvas template and confirm accepted upload type]]
+- [ ] report/main.tex:325 - [[STUDENT: check both extracts and at least one saved draft against the live Hamar page]]
