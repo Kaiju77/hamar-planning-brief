@@ -6,16 +6,18 @@
 5 & 465 & 264 & 5.682 & Saved \\
 }
 \newcommand{\CombinedRows}{
-A & 1 & 465 & 264 & 15.366 & Saved \\
-A & 2 & 465 & 264 & 5.637 & Saved \\
-A & 3 & 465 & 264 & 5.670 & Saved \\
-A & 4 & 465 & 264 & 5.616 & Saved \\
-A & 5 & 465 & 264 & 5.682 & Saved \\
-B & 1 & 593 & 431 & 19.142 & Saved \\
-B & 2 & 593 & 428 & 7.987 & Saved \\
-B & 3 & 593 & 428 & 8.028 & Saved \\
-B & 4 & 593 & 428 & 8.056 & Saved \\
-B & 5 & 593 & 428 & 7.963 & Saved \\
+A & 1 & 465 & 264 & 15.366 & Saved & Met \\
+A & 2 & 465 & 264 & 5.637 & Saved & Met \\
+A & 3 & 465 & 264 & 5.670 & Saved & Met \\
+A & 4 & 465 & 264 & 5.616 & Saved & Met \\
+A & 5 & 465 & 264 & 5.682 & Saved & Met \\
+B & 1 & 593 & 431 & 19.142 & Saved & Missed \\
+B & 2 & 593 & 428 & 7.987 & Saved & Missed \\
+B & 3 & 593 & 428 & 8.028 & Saved & Missed \\
+B & 4 & 593 & 428 & 8.056 & Saved & Missed \\
+B & 5 & 593 & 428 & 7.963 & Saved & Missed \\
 }
 \newcommand{\ExtendedFindings}{Batch B used 5108 tokens and 51.176 seconds. All 5 attempts saved drafts, but the office-day and date/time checks passed in 0/5 and 0/5 runs. The route mailbox/case and postal-address checks passed in 0/5 and 0/5. The model put the submission details in participation, left response route unknown, and omitted the office day. The longer input therefore failed our content goal even though the code accepted it. These attempts are kept as failures of completeness, not hidden or counted as successful summaries.
+
+A likely cause is our own prompt. It says the official submission route may go under participation, it never defines participation as events such as an office day, and it does not mention office days. So the prompt allowed this choice by the model. We have not changed the prompt or rerun, so we cannot say how much a clearer prompt would help. The saved Norwegian drafts also contradict themselves: the line on what a resident can do contains the mailbox and address, while the next line says the official route is not given. The office day does not appear at all.
 }

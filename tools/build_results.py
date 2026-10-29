@@ -32,11 +32,12 @@ extsummary=json.loads((EXTENDED/'summary.json').read_text(encoding='utf-8'))
 if len(extrows)!=5:
     raise ValueError('Expected all five preserved extended-input attempts')
 combined=[]
-for label, group in [('A', rows), ('B', extrows)]:
-    for i,row in enumerate(group,1):
+for label, group, cases in [('A', rows, summary['cases']), ('B', extrows, extsummary['cases'])]:
+    for i,(row,case) in enumerate(zip(group,cases),1):
         raw=row['raw_model_response']
         outcome='Saved' if row['extracted_facts'] and row['extracted_facts']['in_scope'] else 'Failed'
-        combined.append(f"{label} & {i} & {raw.get('prompt_eval_count',0)} & {raw.get('eval_count',0)} & {row['elapsed_seconds']:.3f} & {outcome} "+r'\\')
+        content='Met' if all(case['reference_fields'].values()) else 'Missed'
+        combined.append(f"{label} & {i} & {raw.get('prompt_eval_count',0)} & {raw.get('eval_count',0)} & {row['elapsed_seconds']:.3f} & {outcome} & {content} "+r'\\')
 # The checks have saved five drafts, but required participation/route content is missing.
 counts={key:sum(c.get('reference_fields',{}).get(key,False) for c in extsummary['cases'])
         for key in extsummary['cases'][0]['reference_fields']}
@@ -55,7 +56,14 @@ findings=(f'Batch B used {token_total} tokens and {seconds:.3f} seconds. '
           'The model put the submission details in participation, left response route unknown, '
           'and omitted the office day. The longer input therefore failed our content goal even '
           'though the code accepted it. These attempts are kept as failures of completeness, '
-          'not hidden or counted as successful summaries.\n')
+          'not hidden or counted as successful summaries.\n\n'
+          'A likely cause is our own prompt. It says the official submission route may go under '
+          'participation, it never defines participation as events such as an office day, and it '
+          'does not mention office days. So the prompt allowed this choice by the model. '
+          'We have not changed the prompt or rerun, so we cannot say how much a clearer prompt '
+          'would help. The saved Norwegian drafts also contradict themselves: the line on what '
+          'a resident can do contains the mailbox and address, while the next line says the '
+          'official route is not given. The office day does not appear at all.\n')
 (ROOT/'report/results-rows.tex').write_text(
     r'\newcommand{\ResultRows}{'+'\n'+'\n'.join(table)+'\n}\n'+
     r'\newcommand{\CombinedRows}{'+'\n'+'\n'.join(combined)+'\n}\n'+

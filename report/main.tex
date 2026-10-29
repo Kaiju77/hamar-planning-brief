@@ -57,8 +57,9 @@ No general permission to crawl or redistribute the site has been established.
 \textbf{Success for the first input} means finding the cycleway and pavement, both
 street endpoints, the start of planning work, and the deadline of 18 November
 2026. The two omitted fields should be \texttt{unknown}. For the longer input,
-the draft should also show the office day and put the official submission details
-in the response-route field. Both drafts must link to the source, show a check
+the draft should also show the office day under participation and put the official
+submission details in the response-route field. Our prompt does not yet ask for exactly
+this split (see Section 3). Both drafts must link to the source, show a check
 date and say \texttt{needs\_human\_review}. Passing the code checks is a separate,
 weaker result. It does not prove that the draft meets all these goals.
 
@@ -120,14 +121,14 @@ Time covers extraction and checking, but excludes final file writes.
 
 \begin{fixedtable}
 \centering\small
-\begin{tabular}{lrrrrl}
+\begin{tabular}{lrrrrll}
 \toprule
-Input & Run & Input tokens & Output tokens & Seconds & Code checks\\
+Input & Run & Input tokens & Output tokens & Seconds & Code checks & Content goal\\
 \midrule
 \CombinedRows
 \bottomrule
 \end{tabular}
-\caption{Two inputs from one notice, each repeated five times. These are not ten different notices.}
+\caption{Two inputs from one notice, each repeated five times. These are not ten different notices. ``Saved'' means the code accepted a draft. ``Missed'' means the draft lacks the office day or the route fields we wanted.}
 \label{tab:runs}
 \end{fixedtable}
 
@@ -312,7 +313,7 @@ python tools/build_results.py
 \end{lstlisting}
 The fixed date reproduces this check. For a new operational run, pass the actual
 Oslo date. Fixture replies are canned. The results builder uses fixed saved batches.
-The raw evaluation summary below keeps the original values. Individual raw model
+The raw evaluation summary below keeps the original values. In it, \texttt{matches\_fixture\_behavior\_expectation} only says the code behaved as the fixture rules expect. It does not say the content was complete: all five drafts there still lack the office day and route. Individual raw model
 replies and input snapshots are in the referenced folder.
 
 \input{evaluation-path}
