@@ -12,4 +12,4 @@ Participants evidenced: Kai and Codex; Claude work supplied through the handoff 
 
 ## Proposed group meetings
 
-Targets: 29 October; 2, 5, 9, 12, 16, 23 and 30 November. Adjust to availability. These dates are proposals, not completed meetings. Record actual attendees, choices, disagreements, reviewed evidence and next steps for each. The final exam requires at least eight genuine meeting reports.
+First group-meeting date: to be agreed. Later tentative targets: 2, 5, 9, 12, 16, 23 and 30 November. Adjust to availability. These dates are proposals, not completed meetings. Record actual attendees, choices, disagreements, reviewed evidence and next steps for each. The final exam requires at least eight genuine meeting reports.
