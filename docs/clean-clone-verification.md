@@ -12,3 +12,7 @@ Observed outcomes:
 The fixture and real reproduction artifacts are preserved under evidence/clean-clone. The service version and installed model digests were queried separately on 29 October and are under evidence; these observations do not retroactively prove the exact runtime state of all earlier experiments.
 
 GitHub CLI returned isPrivate=false and main as the default branch. No Canvas submission or external message was sent.
+
+## Review revision verification
+
+A second fresh GitHub clone at commit 73da416 was checked on 29 October 2026. All 12 tests passed, the seven-case fixture evaluation reproduced its expected behaviors (including the explicitly labeled known unsafe acceptance), and the results builder reconstructed the same 3,645 tokens and 37.971 seconds. The model extraction logic was unchanged; the earlier real-model reproduction remains the real-backend check. This was again the same desktop, not an independent machine or student review.
