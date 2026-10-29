@@ -2,7 +2,13 @@
 
 Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj.
 
-The group formed late. Kai led the preparation so far, with substantial coding, testing and drafting help from Claude and Codex. The next step is your review. We will record what you check and any edits you make.
+This draft presents a working planning-notice workflow, its test results and its limitations. Kai led the initial preparation with substantial AI assistance. The next step is to agree the shared direction and review the draft together.
+
+## Decision before submission
+
+Compare this candidate with your bus-delay reporting work. Please share what already runs, the input data, one sample output and who would use the report. Decide together whether to continue one candidate or build a genuinely connected workflow. A shared reporting pipeline alone does not establish that two unrelated topics are the same project.
+
+Your message reports that the compulsory project must substantially continue into the exam (about 50 percent, as explained by the lecturer). Confirm what must carry over before committing to a direction. This planning-notice draft is not a claim that the joint decision has been made.
 
 ## Open these
 

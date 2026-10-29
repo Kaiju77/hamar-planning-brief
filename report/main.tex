@@ -236,80 +236,70 @@ Ollama. Generate a response: local generation API documentation. Accessed
 
 \appendix
 \section{Prompt excerpts and changes}
-These excerpts come from the project conversations. They show how AI help was used
-and questioned. Full student review of the report is still planned.
-
-\paragraph{Choosing the scope.}
-Kai asked for: ``Something that is relatively easy to pull off but still relevant
-and good enough for a great exam/grade''.
-This led to a small local-notice project. It does not prove resident need.
+The following excerpts document instructions, review comments and corrections from
+the project conversations. Markdown formatting has been normalized for typesetting;
+the quoted words are unchanged. They are selected examples, not a complete transcript.
 
 \paragraph{Checking dates.}
-The Claude review supplied by Kai said: ``Add a deadline\_status field (open,
+\textbf{Review excerpt:} ``Add a deadline\_status field (open,
 closed, unknown) computed in code by comparing deadline with retrieved\_at.''
-The implemented check instead uses a recorded check date. The retrieval date stays
+\textbf{Change:} The implemented check uses a recorded check date. The retrieval date stays
 separate. This allows the same saved text to be checked again later.
 
 \paragraph{An untested assumption.}
-The Claude handoff said: ``The Ollama backend is written but untested.''
-Real runs were then saved, including the failed Llama attempt. Later Qwen
+\textbf{Handoff excerpt:} ``The Ollama backend is written but untested.''
+\textbf{Follow-up:} Real runs were saved, including the failed Llama attempt. Later Qwen
 results do not replace that failure.
 
-\paragraph{Student correction or rejection, example 1.}
-Kai asked: ``But why would Oslo be mentioned at all in cases that pertains hamar ?''
-This challenged a confusing example. Codex clarified that Oslo was hypothetical,
-not a recorded result, and used the actual contradictory draft instead.
+\paragraph{Checking the failure explanation.}
+\textbf{Prompt:} ``Read \texttt{docs/CLAUDE\_REVIEW3.md} and address the must-fix findings?''
+\textbf{Reviewed changes:} the report identifies overlapping prompt definitions as
+a likely cause, explains the contradictory draft, separates saving from content
+success in the table, and explains the raw log flag. The saved runs were not changed.
 
-\paragraph{Student correction or rejection, example 2.}
-Kai asked: ``why are we not supposed to fix it if there is an issue?''
-Codex clarified that repairs are allowed. The original runs must stay unchanged
+\paragraph{Clarifying repairs and evidence.}
+\textbf{Prompt:} ``why are we not supposed to fix it if there is an issue?''
+\textbf{Clarification:} repairs are allowed. The original runs must stay unchanged
 as evidence; a repaired version would need separate runs and updated reporting.
 
-\paragraph{AI help and our responsibility.}
-Claude and Codex did substantial coding, tests, runs and report drafting. Kai chose
-the direction, supplied reviews and requested changes. This plain-language rewrite
-is also AI-assisted. The students must read, check and edit it before submission.
-Kai explained the intended user and compared the supplied source with a generated
-draft, saying it looked right. The contradiction and missing office day were then
-pointed out. This is a partial review, not approval of the whole report or code.
-The group formed late. Mohammad has not contributed to the initial implementation;
-his review is planned. The contribution account will be updated after that work.
+\paragraph{Assistance and contributions.}
+Claude and Codex provided substantial help with implementation, testing, model runs
+and report drafting. Kai led the initial preparation, supplied review feedback and
+compared source text with a generated draft. Mohammad joined the group later;
+his planned role at this stage is to review the report and source/output comparison.
+Full student review and final editing remain unfinished. Contributions will be
+updated to reflect the work actually completed before submission.
 
 \clearpage
 \section{Working sessions and meeting records}
-The records below are individual work with AI help. They are not group meetings
-with Mohammad. Add actual group records after meetings happen.
+These records summarize the initial individual work with AI help. They document
+design decisions and revisions, rather than completed joint group meetings.
 
 \subsection{27 October: scope and source work}
-\textbf{Recorded participants:} Kai and Codex in the coursework chat.
-\textbf{Work:} read the new requirements and choose a small Innlandet project.
+\textbf{Work:} read the requirements and choose a small Innlandet project.
 \textbf{Decisions:} start with selected public text, evidence and human review.
-The supplied Claude review led to clearer fields for responding, dates and evidence.
+An AI review led to clearer fields for responding, dates and evidence.
 \textbf{Still needed then:} group details, exact deadline, source terms and template.
 
 \subsection{28 October: code and real runs}
-\textbf{Recorded participants:} Kai and Codex, with Claude's handoff supplied by Kai.
 \textbf{Work:} reproduce seven tests, fix malformed-date handling, add four tests,
 preserve separate outputs and run the local models. One Llama failure and two
 different five-run Qwen batches were kept. \textbf{Decisions:} use template drafting,
-show the injection gap and publish the repository with Kai's permission.
-Kai supplied Group 12 details and an initial deadline, later corrected by the course announcement.
+show the injection gap and publish a reproducible repository.
 
 \subsection{29 October: reviews and a longer input}
-\textbf{Recorded participants:} Kai and Codex; two Claude reviews supplied by Kai.
 \textbf{Work:} correct the word count, improve the risks and schedule, add an
 unavailable-service test, and check a clean clone. A longer extract was then
-source-checked and used for five more real attempts. Kai later authorized making
-the current review version accessible through the public repository.
-Student review and partner contribution are still open.
-Kai confirmed that both students joined Group 12 in Canvas and agreed to work together.
-The supplied course announcement corrects the deadline to 30 October, with retake on 6 November.
+source-checked and used for five more real attempts. \textbf{Decisions:} retain the
+incomplete drafts as evidence and distinguish code acceptance from content success.
+Both students joined Group 12. Full student review remains planned.
 
 \subsection{Group work still to record}
-The group formed late and no joint working meeting has been recorded yet. Both
-students will review the report and discuss changes before submission. Record
-actual dates, attendees, decisions and next actions after those discussions.
-Eight genuine meeting records are required for the final exam, not claimed here.
+No joint working meeting has been recorded yet. The next discussion will agree
+the shared project direction and record decisions, responsibilities and next steps.
+The current planning-notice workflow is a working candidate. Its relationship to
+the proposed bus-delay reporting idea must be agreed before submission. Eight
+genuine meeting records are required for the final exam, not claimed here.
 
 \section{Reproduction and one saved evaluation}
 Install Python 3.10+ and Ollama and pull \texttt{qwen2.5-coder:7b}. No Python
@@ -330,9 +320,8 @@ replies and input snapshots are in the referenced folder.
 
 \section{Items to finish before submission}
 The report uses the official NeurIPS 2025 preprint style without its checklist.
-Kai confirmed that Canvas accepts PDF. A separate course-template comparison and
-the exact upload cutoff time remain unconfirmed. Kai has supplied the Hamar page
-and compared it with a saved draft. Full report review by both students and
-Mohammad's source/output check are planned before submission. This copy is for
-that review. The checklist records the remaining actions.
+PDF upload has been confirmed. A separate course-template comparison and the exact
+cutoff time remain unconfirmed. This is a draft for partner review: the shared
+project direction, full report review and source/output checks must be completed
+before final approval. The repository checklist records the remaining actions.
 \end{document}

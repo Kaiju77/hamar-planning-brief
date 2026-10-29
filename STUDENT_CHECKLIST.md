@@ -4,6 +4,8 @@ This is a review draft, not a finished submission. Complete the checks below bef
 
 ## Unverified or unfinished items
 
+- [ ] Agree the shared project direction with Mohammad before submission. Compare the bus-reporting work with this candidate and confirm the lecturer's continuity requirement for the exam. The current report is a planning-notice candidate, not an agreed merger.
+
 - [ ] Both students read the report and edit wording they would not use or cannot explain.
 - [ ] Kai and Mohammad compare both extracts and a saved output against the live source.
 - [ ] Confirm Mohammad's actual contribution and record the first real group meeting. No attendance is invented.

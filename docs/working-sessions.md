@@ -31,3 +31,7 @@ Kai pasted the Hamar page text and the walkthrough draft, and assessed it as 'lo
 ## Late-group contribution clarification and phone access
 
 Kai said the preparation so far was done by Kai and the assistants while Mohammad worked on something else; the group formed late. Kai will read the report tomorrow and confirmed PDF is accepted. Kai requested a phone-accessible copy to send Mohammad for review and authorized making the repository current and accessible. Genuine questions about the Oslo example and preserving failed runs were used in the prompt appendix. No implementation work or completed review is attributed to Mohammad. No message was sent to him by the assistant.
+
+## 30 October: editorial handoff
+
+The report appendix was polished for partner review. Repeated personal attribution was replaced with neutral excerpt labels and one concise contribution statement. Only actual conversation excerpts were selected; no prompts, results, meetings or contributions were invented. The main technical results were unchanged. The partner guide now asks the group to compare the bus-reporting work and agree a connected project direction before submission. This is a review handoff, not final approval.

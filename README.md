@@ -8,6 +8,8 @@ Status: a working program and student-review draft, updated 29 October 2026. The
 
 ## Open on a phone or share for review
 
+This is a polished review draft of the planning-notice candidate. The group still needs to agree how it relates to the bus-delay reporting work before submission and continuation to the exam.
+
 - [Current report PDF](output/pdf/compulsory2_report.pdf): read the first four pages for the main report. References and appendices follow.
 - [Mohammad's review guide](docs/PARTNER_REVIEW.md): a short list of what to check and send back.
 - [Student checklist](STUDENT_CHECKLIST.md): remaining factual checks and approval tasks.
