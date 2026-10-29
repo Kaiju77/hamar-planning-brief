@@ -40,7 +40,7 @@ python evaluate.py --backend ollama --count 5
 python tools/build_results.py
 ```
 
-Eleven unit tests cover the seven original fixture cases and four added robustness cases. The fixture evaluation also deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success.
+Twelve unit tests cover the seven original fixture cases and five added robustness cases, including an unavailable Ollama service. The fixture evaluation also deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
 
 `evaluate.py` preserves a separate batch and limits a real batch to at most five explicit runs. Its field-word reference checks are narrow proxies, not semantic accuracy. `tools/build_results.py` regenerates the report's table and metrics from the fixed final evidence batch, rather than silently replacing it with new results.
 
@@ -59,7 +59,7 @@ Eleven unit tests cover the seven original fixture cases and four added robustne
 - `output/pdf/compulsory2_report.pdf`: compiled editorial draft for student review.
 - `docs/`: source review, assistance record, working-session records and review guidance.
 
-The final five Qwen repetitions all saved mechanically valid drafts on the same 25-word partial input. This is not five different notices. A separate early Llama failure and five earlier Qwen successes are retained rather than mixed into the final batch.
+The final five Qwen repetitions all saved mechanically valid drafts on the same 21-word partial input. This is not five different notices. A separate early Llama failure and five earlier Qwen successes are retained rather than mixed into the final batch.
 
 ## Operation limits and known gaps
 

@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
+from urllib.error import URLError
 import checks
 import run
 
@@ -36,3 +38,13 @@ class Robustness(unittest.TestCase):
             for _ in range(2):
                 run.run(FX/'syn_ok.meta.json',FX/'syn_ok.txt',out=tmp,checked_at='2026-10-28')
             self.assertEqual(len(list(Path(tmp).rglob('run.json'))), 2)
+
+    def test_ollama_unavailable_saves_failure_without_draft(self):
+        with tempfile.TemporaryDirectory() as tmp, patch('run.urllib.request.urlopen', side_effect=URLError('offline')):
+            result = run.run(FX/'syn_ok.meta.json', FX/'syn_ok.txt', backend='ollama',
+                             out=tmp, checked_at='2026-10-28')
+            self.assertEqual(result['status'], 'failed')
+            reports = list(Path(tmp).rglob('*.failure.json'))
+            self.assertEqual(len(reports), 1)
+            self.assertEqual(json.loads(reports[0].read_text(encoding='utf-8'))['status'], 'failed')
+            self.assertEqual(list(Path(tmp).rglob('*.md')), [])

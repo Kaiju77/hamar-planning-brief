@@ -1,0 +1,38 @@
+{
+  "run_id": "20261029T075807504976",
+  "backend": "fixture",
+  "model": null,
+  "temperature": 0,
+  "num_predict": 800,
+  "timeout_seconds": 120,
+  "checked_at": "2026-10-28",
+  "elapsed_seconds": 0.001,
+  "raw_model_response": {},
+  "extracted_facts": {
+    "in_scope": true,
+    "proposal": {
+      "value": "Planarbeid ved Testplassen",
+      "evidence": "planarbeid ved Testplassen"
+    },
+    "location": {
+      "value": "Testplassen",
+      "evidence": "ved Testplassen"
+    },
+    "planning_stage": {
+      "value": "Oppstart av planarbeid",
+      "evidence": "Varsel om oppstart av planarbeid"
+    },
+    "deadline": {
+      "value": "ambiguous",
+      "evidence": "Innspill innen 15. desember"
+    },
+    "participation": {
+      "value": "unknown",
+      "evidence": ""
+    },
+    "response_route": {
+      "value": "unknown",
+      "evidence": ""
+    }
+  }
+}

@@ -1,5 +1,9 @@
 # First real-input runs, 28 October 2026
 
+Review correction, 29 October: examples/ringgata.txt contains **21 whitespace-delimited words**, not the 25 previously stated in surrounding documentation. The input and original recorded model results have not been changed. Two of the six real fields, participation and response_route, were exercised only as unknown values. All five final extracted objects are identical, so this provides little information about variance.
+
+The historical fixture summary uses `expected_pipeline_outcome: true` to mean the checker behaved as the fixture expected, including its known unsafe acceptance. It must not be read as security success. New evaluation output calls the field `matches_fixture_behavior_expectation` and explicitly labels the injected-date acceptance `security_verdict: known_unsafe_acceptance`. Original evidence is retained unchanged.
+
 Input: three short non-contiguous excerpts from the official Ringgata notice, selected and checked by Codex. This is a partial source, not the whole notice. Student review remains pending. The original source URL and limitations are recorded in examples/ringgata.meta.json.
 
 Temperature: 0. Output cap: 800 tokens. HTTP timeout: 120 seconds. Check date: 2026-10-28. No retries. All raw responses and extracted facts are preserved in evidence/real. Counts below come from run.json files.

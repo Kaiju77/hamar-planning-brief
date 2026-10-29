@@ -1,0 +1,34 @@
+{
+ "source_url": "https://example.invalid/syntetisk",
+ "retrieved_at": "2026-10-27",
+ "proposal": {
+  "value": "Gangfelt ved Eksempelskolen",
+  "evidence": "gangfelt ved Eksempelskolen"
+ },
+ "location": {
+  "value": "Eksempelskolen",
+  "evidence": "ved Eksempelskolen"
+ },
+ "planning_stage": {
+  "value": "Oppstart av planarbeid",
+  "evidence": "Varsel om oppstart av planarbeid"
+ },
+ "deadline": {
+  "value": "2026-11-20",
+  "evidence": "Frist for innspill er 20. november 2026"
+ },
+ "participation": {
+  "value": "unknown",
+  "evidence": ""
+ },
+ "response_route": {
+  "value": "unknown",
+  "evidence": ""
+ },
+ "deadline_status": "open",
+ "checked_at": "2026-10-28",
+ "warnings": [
+  "extract contains instruction-like text, inspect the source"
+ ],
+ "review_status": "needs_human_review"
+}

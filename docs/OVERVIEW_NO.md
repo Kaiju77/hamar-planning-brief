@@ -28,7 +28,7 @@ Det er ett modellkall. Modellen får instruksjonsfilen og det valgte utdraget. D
 
 ## Eksemplet vi har testet
 
-Vi bruker tre korte, adskilte utdrag fra Hamar kommunes varsel om Ringgata. Utdraget inneholder forslaget om sykkelveg med fortau, strekningen mellom Solvangvegen og Disenvegen, oppstart av planarbeidet og fristen 18. november 2026. Det er kun 25 ord og gir derfor en svært begrenset test. Innsendingsveien er utelatt. Da skal modellen svare at den er ukjent, ikke finne på en e-postadresse.
+Vi bruker tre korte, adskilte utdrag fra Hamar kommunes varsel om Ringgata. Utdraget inneholder forslaget om sykkelveg med fortau, strekningen mellom Solvangvegen og Disenvegen, oppstart av planarbeidet og fristen 18. november 2026. Det er kun 21 ord og gir derfor en svært begrenset test. Innsendingsveien er utelatt. Da skal modellen svare at den er ukjent, ikke finne på en e-postadresse.
 
 Kilden og utdraget er kontrollert av Codex. Din og partnerens gjennomgang er fortsatt en faktisk oppgave, ikke noe vi har krysset av automatisk.
 
@@ -38,7 +38,7 @@ Den endelige forsøksserien har fem kjøringer med Qwen på det samme utdraget. 
 
 En tidligere Llama-kjøring feilet og inneholdt oppdiktede sitater. Den er bevart. Vi har også et syntetisk tilfelle der en ondsinnet dato kan slippe gjennom hvis datoen faktisk står i teksten. At sitatet finnes, beviser ikke at sitatet støtter påstanden. Det er en viktig del av risikoanalysen.
 
-Alle 11 tester bestod, og en fersk klone fra GitHub kjørte både testene og et reelt eksempel. Syntetiske tester med ferdiglagde modellsvar tester programmet, ikke modellens evne til å motstå angrep.
+Alle 12 tester bestod, og en fersk klone fra GitHub kjørte både testene og et reelt eksempel. Syntetiske tester med ferdiglagde modellsvar tester programmet, ikke modellens evne til å motstå angrep.
 
 ## Dette leverer vi for Compulsory 2
 

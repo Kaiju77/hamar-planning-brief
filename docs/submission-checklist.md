@@ -11,7 +11,7 @@ Canvas information supplied by Kai: Group 12; deadline 7 November 2026 at 23:59;
 - Honest individual working-session records, distinguished from partner meetings.
 - Multi-stage skeleton with tools and one-command automation.
 - Minimal real-source example and source metadata; no individual contact details.
-- Eleven passing tests and preserved real-model results.
+- Twelve passing tests and preserved real-model results; the added test covers an unavailable service.
 - Known injection weakness and partial-input limitations documented.
 - Model settings, bounded generation, request timeout and later exam controls described accurately.
 
