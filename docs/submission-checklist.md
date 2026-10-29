@@ -27,4 +27,4 @@ Current information supplied by Kai: both students joined Group 12 and agreed to
 The prepared ZIP is a review bundle, not an automatically submitted assignment. No compulsory video is specified for this checkpoint. The mandatory live demonstration belongs to the later exam.
 # Current review note
 
-Use the root STUDENT_CHECKLIST.md for the current third-review draft and its eight explicit student markers. The latest changes are local only. The prepared submission folder is not approved for upload while those markers and the public-repository mismatch remain.
+Use the root STUDENT_CHECKLIST.md for the current third-review draft and its remaining student checks. Kai authorized a public review copy for phone access. The prepared folder is not approved for upload until student review and factual checks are complete.

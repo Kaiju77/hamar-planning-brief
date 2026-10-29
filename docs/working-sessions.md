@@ -23,3 +23,11 @@ At Kai's request, Codex ran a new real-model demonstration on the longer extract
 Kai supplied the course announcement dated 27 October: first Compulsory 2 deadline 30 October, retake 6 November. It requires pairs and says single-student reports need special permission. The announcement does not state cutoff times. This supersedes the earlier 7 November at 23:59 working note. Kai confirmed both students joined Group 12 in Canvas and agreed to work together. Actual contributions, meeting details and completed report/source review remain unconfirmed.
 
 First group-meeting date: to be agreed. Later tentative targets: 2, 5, 9, 12, 16, 23 and 30 November. Adjust to availability. These dates are proposals, not completed meetings. Record actual attendees, choices, disagreements, reviewed evidence and next steps for each. The final exam requires at least eight genuine meeting reports.
+
+### Source and draft comparison supplied by Kai
+
+Kai pasted the Hamar page text and the walkthrough draft, and assessed it as 'looks about right, unless you see something i dont'. This records a preliminary source/output review, not full report approval. Codex compared the supplied texts: proposal, endpoints, deadline, institutional mailbox, case number and postal address agree. The draft still says the official route is missing despite printing it under participation, and omits the office day. Those two defects were pointed out for Kai to consider; his acknowledgment is not yet recorded. The original generated draft and experiment results remain unchanged. No full-page copy was added to the repository.
+
+## Late-group contribution clarification and phone access
+
+Kai said the preparation so far was done by Kai and the assistants while Mohammad worked on something else; the group formed late. Kai will read the report tomorrow and confirmed PDF is accepted. Kai requested a phone-accessible copy to send Mohammad for review and authorized making the repository current and accessible. Genuine questions about the Oslo example and preserving failed runs were used in the prompt appendix. No implementation work or completed review is attributed to Mohammad. No message was sent to him by the assistant.

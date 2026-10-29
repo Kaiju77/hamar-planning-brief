@@ -51,7 +51,7 @@ In `evaluation-log.json` (copied into Appendix C), each Batch B case has `"match
 2. **Consider "participation" in the success text.** For Input B the success definition could name both the office day (participation) and the route (response route), so the checker and the sentence match.
 3. **The "known injection weakness" is reported well, but the 12 tests passing is easy to over-read.** The README and report already warn about this. No change needed beyond keeping that wording.
 4. **The abstract says the longer runs "missed important information".** That is accurate. "Important" is a judgment. You could say "missed the office day and the route field" to be concrete.
-5. **Local-only files.** `report/main.log` contains `C:\Users\kaiar\AppData...` paths and `tmp/` and `SUBMISSION_FOLDER/` are untracked. They are git-ignored so they will not be pushed, but check they are not inside any ZIP you share. The handoff says the privacy scan covers "project text", which is true; the log is a build file.
+5. **Local-only files.** `report/main.log` contains local Windows user-directory paths and `tmp/` and `SUBMISSION_FOLDER/` are untracked. They are git-ignored so they will not be pushed, but check they are not inside any ZIP you share. The handoff says the privacy scan covers "project text", which is true; the log is a build file.
 6. **Dates in "Appendix B".** The working-session records use "Kai and Codex" and "two Claude reviews supplied by Kai". That is honest and does not invent group meetings. Keep it. The student markers for real meetings should stay open.
 
 ## Checked and fine

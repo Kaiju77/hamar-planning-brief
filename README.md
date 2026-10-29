@@ -4,7 +4,15 @@ Compulsory 2, KIUA-2003, Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A
 
 A small Python workflow turns selected planning-notice text into a Norwegian draft with field-level evidence, deadline status and an explicit human-review gate. It runs in four stages: load input, extract facts with a local model, format a draft, then check and save. It uses Python's standard library, files and Ollama's local HTTP API. One command performs all stages automatically. There is no automatic external publication.
 
-Status: a working program and student-review draft, updated 29 October 2026. The course announcement dated 27 October gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Exact cutoff times and accepted upload types still need checking in Canvas. Kai confirmed both students joined Group 12 and agreed to work together. Student source/output review, actual contributions and editorial approval remain pending. The newest revision is local only, as requested; the public repository still has the earlier version. See STUDENT_CHECKLIST.md and docs/REVIEW3_HANDOFF.md.
+Status: a working program and student-review draft, updated 29 October 2026. The course announcement gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Kai confirmed PDF is accepted; exact cutoff times remain to be checked. Both students joined Group 12 and agreed to work together. Kai led the preparation with substantial AI help; Mohammad joined late and his review is planned. Kai compared source text with a draft; full student report review remains unfinished.
+
+## Open on a phone or share for review
+
+- [Current report PDF](output/pdf/compulsory2_report.pdf): read the first four pages for the main report. References and appendices follow.
+- [Mohammad's review guide](docs/PARTNER_REVIEW.md): a short list of what to check and send back.
+- [Student checklist](STUDENT_CHECKLIST.md): remaining factual checks and approval tasks.
+
+The repository is public, so these links can be opened on a phone without a local Python installation. The app itself runs on a computer; this does not install or host it on the phone. The PDF is still for student review, not a claim of final approval.
 
 Public repository: https://github.com/Kaiju77/hamar-planning-brief
 

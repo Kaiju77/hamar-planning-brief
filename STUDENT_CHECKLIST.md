@@ -1,6 +1,6 @@
 # Student checklist before submission
 
-This is a review draft, not a finished submission. Remove or replace each marker only after doing the work. The latest changes are local only.
+This is a review draft, not a finished submission. Complete the checks below before final approval. A public review copy is being shared for phone access.
 
 ## Unverified or unfinished items
 
@@ -8,12 +8,13 @@ This is a review draft, not a finished submission. Remove or replace each marker
 - [ ] Kai and Mohammad compare both extracts and a saved output against the live source.
 - [ ] Confirm Mohammad's actual contribution and record the first real group meeting. No attendance is invented.
 - [ ] Compare with the Canvas-supplied template. The current style is the official NeurIPS 2025 file, not a verified course-specific copy.
-- [ ] Confirm Canvas accepts PDF, ZIP or another type and check exact cutoff times. The course announcement says first deadline 30 October and retake 6 November; it does not state times.
+- [x] Kai confirmed PDF upload is accepted.
+- [ ] Check exact cutoff times in Canvas. The announcement says first deadline 30 October and retake 6 November; it does not state times.
 - [x] Kai confirmed both students joined Group 12 in Canvas and agreed to work together. This confirms group membership, not contributions or completed report review.
-- [ ] Check prompt excerpts against the actual messages and add two genuine student challenges.
+- [x] Two genuine Kai questions are included from the chat: the hypothetical Oslo example and why a known issue could not be fixed. They are questions about explanations, not invented code repairs.
 - [ ] Review the privacy scan. Institutional contact details and the two author names are intentional; no personal contacts are supplied to the model.
 - [ ] Resolve wider source-reuse/access terms before any crawling or broader redistribution. Public access is not reuse permission.
-- [ ] Publish the reviewed local commit before relying on the public repository link. No push has been made for this revision.
+- [ ] After final student edits, publish the approved revision and check its public PDF/code links. Kai authorized publishing the current review copy for phone access; this is not final submission approval.
 - [ ] Recompile after edits, inspect every page and keep main text at 3 to 4 pages. The current build has 4 main pages and 8 total; Appendix A occupies one page.
 - [ ] Model completeness, semantic support, conflicting dates, safe path restrictions, total budget and server cancellation remain limited. These are documented, not solved by style changes.
 
@@ -34,13 +35,6 @@ This is a review draft, not a finished submission. Remove or replace each marker
 
 Assistant verification of a claim does not tick off the student column. Keep the source URL, retrieval date and any changes you make in your notes.
 
-## Report placeholders
+## Report drafting markers resolved with factual text
 
-- [ ] report/main.tex:260 - [[STUDENT: one real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:263 - [[STUDENT: a second real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:269 - [[STUDENT: describe what Kai actually checked and changed after reading the report and code]]
-- [ ] report/main.tex:270 - [[STUDENT: describe Mohammad's actual contribution and review; do not claim work he has not done]]
-- [ ] report/main.tex:303 - [[STUDENT: actual meeting date, duration and attendees]]
-- [ ] report/main.tex:304 - [[STUDENT: what each person checked; options discussed; decision and reason; next actions]]
-- [ ] report/main.tex:327 - [[STUDENT: compare with the Canvas template and confirm accepted upload type]]
-- [ ] report/main.tex:328 - [[STUDENT: check both extracts and at least one saved draft against the live Hamar page]]
+The eight template markers have been replaced with verified prompt excerpts, a partial-review account, the late group formation, and explicit unfinished tasks. Removing template markers does not mark student review or meetings complete. Mohammad has not been credited with implementation work. His review is planned. Kai will read the main report tomorrow.
