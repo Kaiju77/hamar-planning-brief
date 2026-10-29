@@ -1,0 +1,14 @@
+{
+  "batch": "evidence\\evaluation-final\\20261028T180115288510Z",
+  "runs": 5,
+  "total_tokens": 3645,
+  "wall_seconds_sum": 37.971,
+  "reference_proxy_counts": {
+    "deadline": 5,
+    "proposal": 5,
+    "location": 5,
+    "stage": 5,
+    "participation_unknown": 5,
+    "response_route_unknown": 5
+  }
+}

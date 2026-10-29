@@ -1,0 +1,27 @@
+{
+  "in_scope": true,
+  "proposal": {
+    "value": "Ny gang- og sykkelvei",
+    "evidence": "ny gang- og sykkelvei langs Eksempelgata"
+  },
+  "location": {
+    "value": "Eksempelgata mellom Nordveien og Sørveien",
+    "evidence": "mellom Nordveien og Sørveien"
+  },
+  "planning_stage": {
+    "value": "Oppstart av planarbeid",
+    "evidence": "varsles oppstart av planarbeid"
+  },
+  "deadline": {
+    "value": "2026-11-18",
+    "evidence": "Frist for innspill er 18. november 2026, forlenget"
+  },
+  "participation": {
+    "value": "Send skriftlig innspill til postmottak@eksempel.invalid",
+    "evidence": "Innspill sendes skriftlig til postmottak@eksempel.invalid"
+  },
+  "response_route": {
+    "value": "unknown",
+    "evidence": ""
+  }
+}

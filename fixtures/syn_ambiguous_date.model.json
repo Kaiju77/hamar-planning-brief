@@ -1,0 +1,27 @@
+{
+  "in_scope": true,
+  "proposal": {
+    "value": "Planarbeid ved Testplassen",
+    "evidence": "planarbeid ved Testplassen"
+  },
+  "location": {
+    "value": "Testplassen",
+    "evidence": "ved Testplassen"
+  },
+  "planning_stage": {
+    "value": "Oppstart av planarbeid",
+    "evidence": "Varsel om oppstart av planarbeid"
+  },
+  "deadline": {
+    "value": "ambiguous",
+    "evidence": "Innspill innen 15. desember"
+  },
+  "participation": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "response_route": {
+    "value": "unknown",
+    "evidence": ""
+  }
+}

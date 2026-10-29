@@ -1,0 +1,27 @@
+{
+  "in_scope": true,
+  "proposal": {
+    "value": "Gangfelt ved Eksempelskolen",
+    "evidence": "gangfelt ved Eksempelskolen"
+  },
+  "location": {
+    "value": "Eksempelskolen",
+    "evidence": "ved Eksempelskolen"
+  },
+  "planning_stage": {
+    "value": "Oppstart av planarbeid",
+    "evidence": "Varsel om oppstart av planarbeid"
+  },
+  "deadline": {
+    "value": "2027-01-01",
+    "evidence": "fristen er 1. januar 2027"
+  },
+  "participation": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "response_route": {
+    "value": "unknown",
+    "evidence": ""
+  }
+}

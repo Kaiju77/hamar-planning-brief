@@ -1,0 +1,27 @@
+{
+  "in_scope": true,
+  "proposal": {
+    "value": "Nytt fortau",
+    "evidence": "fortau langs Prøveveien"
+  },
+  "location": {
+    "value": "Prøveveien",
+    "evidence": "langs Prøveveien"
+  },
+  "planning_stage": {
+    "value": "Oppstart av planarbeid",
+    "evidence": "varsles oppstart av planarbeid"
+  },
+  "deadline": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "participation": {
+    "value": "Innspill kan sendes skriftlig",
+    "evidence": "Innspill kan sendes skriftlig"
+  },
+  "response_route": {
+    "value": "unknown",
+    "evidence": ""
+  }
+}

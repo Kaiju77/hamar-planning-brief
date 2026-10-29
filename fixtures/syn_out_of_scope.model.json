@@ -1,0 +1,27 @@
+{
+  "in_scope": false,
+  "proposal": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "location": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "planning_stage": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "deadline": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "participation": {
+    "value": "unknown",
+    "evidence": ""
+  },
+  "response_route": {
+    "value": "unknown",
+    "evidence": ""
+  }
+}

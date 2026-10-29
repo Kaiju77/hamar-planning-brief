@@ -1,0 +1,8 @@
+{
+ "status": "failed",
+ "failed_checks": [
+  "out of scope: not a planning notice open for input"
+ ],
+ "message": "Run requires attention; no draft saved.",
+ "source_url": "https://www.hamar.kommune.no/lokaldemokrati/oppstart-reguleringsplan-fv-187-ringgata-i-hamar"
+}

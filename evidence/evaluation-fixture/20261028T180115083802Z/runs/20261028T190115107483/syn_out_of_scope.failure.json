@@ -1,0 +1,8 @@
+{
+ "status": "failed",
+ "failed_checks": [
+  "out of scope: not a planning notice open for input"
+ ],
+ "message": "Run requires attention; no draft saved.",
+ "source_url": "https://example.invalid/syntetisk"
+}

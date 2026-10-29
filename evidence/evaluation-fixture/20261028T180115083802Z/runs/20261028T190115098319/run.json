@@ -1,0 +1,38 @@
+{
+  "run_id": "20261028T190115098319",
+  "backend": "fixture",
+  "model": null,
+  "temperature": 0,
+  "num_predict": 800,
+  "timeout_seconds": 120,
+  "checked_at": "2026-10-28",
+  "elapsed_seconds": 0.001,
+  "raw_model_response": {},
+  "extracted_facts": {
+    "in_scope": true,
+    "proposal": {
+      "value": "Nytt fortau",
+      "evidence": "fortau langs Prøveveien"
+    },
+    "location": {
+      "value": "Prøveveien",
+      "evidence": "langs Prøveveien"
+    },
+    "planning_stage": {
+      "value": "Oppstart av planarbeid",
+      "evidence": "varsles oppstart av planarbeid"
+    },
+    "deadline": {
+      "value": "unknown",
+      "evidence": ""
+    },
+    "participation": {
+      "value": "Innspill kan sendes skriftlig",
+      "evidence": "Innspill kan sendes skriftlig"
+    },
+    "response_route": {
+      "value": "unknown",
+      "evidence": ""
+    }
+  }
+}

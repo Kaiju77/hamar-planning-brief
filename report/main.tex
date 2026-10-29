@@ -1,0 +1,331 @@
+\documentclass{article}
+\usepackage[preprint]{neurips_2025}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single}
+\input{results-macros}
+\input{results-rows}
+\title{Hamar Planning Brief:\\An Evidence-Linked Walking Skeleton for Public Notices}
+\author{Kai Arne Hage\\\textbf{Mohammad Almojtaba Elhajj A Elhajj}\\
+Group 12, KIUA-2003\\University of Inland Norway}
+\begin{document}
+\maketitle
+\begin{abstract}
+Public planning notices ask residents to understand a proposal, identify its location,
+and respond by a stated deadline. We propose a Norwegian draft-brief workflow that
+extracts these facts with supporting passages and makes missing information visible.
+The current Python skeleton loads a selected public-source extract, calls a local
+model, formats a draft deterministically, and checks the output before saving it.
+Five repeated runs on one short Ringgata extract passed the implemented checks.
+A rejected model run and a synthetic injection case show why those checks cannot
+replace human review. This report describes the working checkpoint, its limits,
+and the plan for broader evaluation and stress testing before the examination.
+\end{abstract}
+
+\section{Problem, users, and definition of success}
+The intended user is a Hamar resident seeking a traceable explanation of what a
+planning notice proposes, where it applies, its stage, and when and how to respond.
+The first example concerns Ringgata between Solvangvegen and Disenvegen
+\citep{hamar}. The official local source and Norwegian output give the project a
+concrete Innlandet focus. Resident need is a hypothesis: no user interviews or
+usability measurements have been completed.
+
+Scope is official Hamar-area land-use or transport planning notices inviting public
+input. Grants, unrelated news, and completed decisions are out of scope. A reviewer
+selects an extract before the workflow runs. The prototype combines structured
+extraction, evidence, explicit uncertainty, and repeatable checks.
+
+The first input contains three non-contiguous short passages selected and
+source-checked by Codex on 28 October 2026, with no individual names or personal
+contact details. Metadata records provenance and partial-source status. The response
+route is omitted. Wider collection and redistribution require a source-policy review;
+no general reuse license has been verified.
+
+\textbf{Checkable success.} A run must save either an explicit failure report or a
+Norwegian draft whose substantive fields have source evidence. For the selected
+Ringgata extract, the draft should describe the cycleway and pavement proposal,
+the two street endpoints, the start of planning work, and the stated input deadline
+of 18 November 2026. Participation details and the response route must remain
+\texttt{unknown} because they are absent from this input. The output must identify
+the source, show a check date, and carry \texttt{needs\_human\_review}.
+Mechanical checks establish format and locally checkable evidence. A person must
+still assess meaning, completeness, and source freshness.
+
+\newpage
+\section{Architecture and context as implemented}
+Repository: \url{https://github.com/Kaiju77/hamar-planning-brief}.
+It contains the context prompt,
+Python code, synthetic fixtures, the selected real extract and metadata, saved runs,
+tests, and reproduction instructions. The implementation uses Python's standard
+library and Ollama's local generation endpoint \citep{ollama}.
+
+\paragraph{Stage 1: load and bound the input.}
+\texttt{run.py} reads the metadata JSON and selected text file. It validates the
+check date and limits the source to 12,000 characters. The model receives only
+\texttt{context/extract\_prompt.md} and the selected extract inside source
+delimiters. It receives neither the full website nor conversation history, other
+notices, credentials, or filesystem access. The URL is provenance, not a page
+that the model independently fetches. Source selection and privacy screening are
+currently human responsibilities.
+
+\paragraph{Stage 2: extract structured facts.}
+One local model call proposes a Boolean scope decision and six objects:
+\texttt{proposal}, \texttt{location}, \texttt{planning\_stage}, \texttt{deadline},
+\texttt{participation}, and \texttt{response\_route}. Each contains a string value
+and an evidence passage. Instructions require unknown or ambiguous values instead
+of guesses. A deadline may be normalized to an ISO date only when day, month, and
+year are stated. The response route must be explicitly present, rather than
+inferred from the website domain. The selected model is
+\texttt{qwen2.5-coder:7b}, at temperature zero, in JSON output mode.
+
+\paragraph{Stage 3: format a Norwegian draft.}
+A deterministic template renders the facts. It leads with the proposal, location,
+deadline and status, participation, and response route, followed by planning stage,
+evidence, and source. There is no second drafting model. This departs from the
+initial two-model proposal and removes one opportunity for new unsupported prose.
+It also limits the quality of plain-language rewriting. Missing routes direct the
+reader to the original notice, and partial-source status is visible.
+
+\paragraph{Stage 4: check and save.}
+Before any draft is saved, \texttt{checks.py} checks types, provenance format,
+field evidence, and deadline validity. Evidence matching ignores case and repeated
+whitespace. The normalized deadline must correspond to a recognized Norwegian
+date string inside its own evidence. A code-computed status compares the deadline
+with the recorded Europe/Oslo check date. A date-only deadline remains open through
+that date; an unknown or ambiguous deadline has unknown status. Notices with precise
+cutoff times require future handling. Failed checks save structured errors rather
+than a draft. Exact passage matching does not establish semantic entailment.
+
+\paragraph{Automation and execution limits.}
+One command runs the stages without manual handoffs. Python reads and writes local
+files, invokes the local HTTP service, and performs checks. The model has no tools
+that execute commands or publish results. Each invocation gets a distinct directory
+with raw response, counts, elapsed time, facts, and an input/prompt snapshot. There
+is one model call, no automatic retry, an 800-token generation cap, and a 120-second
+HTTP timeout. These are bounded settings, not yet a measured total token budget.
+Ctrl+C stops the client; stopping the model may additionally require
+\texttt{ollama stop}. Automatic publication is excluded and human approval is required.
+
+\newpage
+\section{Walking-skeleton evidence and limitations}
+The recorded final batch uses the response-route prompt and the selected Ringgata
+extract, with check date 28 October 2026. Each of five Qwen runs passed mechanical
+checks and saved a draft. The table is generated from the preserved
+\texttt{run.json} files. Token counts come from Ollama; seconds are client wall time
+through extraction and checking, excluding final file writes.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrrl}
+\toprule
+Run & Input tokens & Output tokens & Seconds & Outcome\\
+\midrule
+\ResultRows
+\bottomrule
+\end{tabular}
+\caption{Five repetitions of one short real-source input, not five distinct notices.}
+\end{table}
+
+All five drafts contain the intended normalized deadline. Narrow reference checks
+also find both location endpoints and the expected proposal and stage terms in
+5/5 runs; participation and response route remain unknown in 5/5. These are
+word-based proxies, not independent semantic grading. Assistant inspection agrees
+with the selected extract, but student review remains to be performed. The batch
+used \TotalTokens{} input-plus-output tokens and \TotalSeconds{} seconds in total.
+Longer first-run latency includes model loading, so this is not a controlled
+performance comparison. A temperature of zero does not guarantee reproducibility
+across model versions, machines, or runtime changes.
+
+Earlier exploratory evidence is retained separately. One \texttt{llama3.2:3b}
+response rejected the real notice as out of scope and produced invented quotations
+and a non-ISO date. The pipeline saved a failure report. Because scope rejection
+short-circuits later checks, this does not demonstrate detection of every invented
+quotation. Five earlier Qwen successes predate the response-route field and are not
+combined with the final batch as independent evidence.
+
+Eleven unit tests pass. Seven original fixture cases exercise normal output,
+missing and ambiguous dates, scope rejection, altered evidence, and two injection
+outcomes. Four added tests cover malformed deadlines, date boundaries, missing
+input, and preservation of repeated runs. The fixture backend supplies canned model
+outputs: a test labeled as model resistance proves only that the checker accepts
+that prewritten response. It is not an observed attack against a live model.
+
+The known injection gap is explicit. A synthetic source contains an instruction
+and an injected date. If a model adopts that date and quotes it, exact matching can
+pass. A word-pattern warning is raised, but the draft is still saved for review.
+The fixture demonstrates a weakness of evidence matching, not a solved defense.
+Other limitations are the extremely short input, untested multi-deadline reasoning,
+no live collection, no general personal-data detector, and no resident usability
+study. The current skeleton meets the four-stage technical path of the brief
+\citep{brief}; the evaluation plan must broaden before the examination.
+
+\newpage
+\section{Plan, risks, and progression to the examination}
+Canvas details supplied by Kai identify Group 12 and a Compulsory 2 deadline of
+7 November 2026 at 23:59. Earlier working notes used 30 October; this plan uses
+the newer Canvas information. The exact demonstration slot is still to be announced.
+We plan backwards from weeks 46--47 and the white-paper deadline of 3 December
+2026 at 11:59 \citep{brief}.
+
+\begin{table}[h]
+\small
+\begin{tabularx}{\linewidth}{@{}p{0.20\linewidth}X@{}}
+\toprule
+Target & Deliverable or decision gate\\
+\midrule
+28 Oct--6 Nov & Review source and outputs together; confirm group roles and template; edit this report; reproduce from a clean clone.\\
+7 Nov, 23:59 & Submit reviewed Compulsory 2 report and repository link through Canvas.\\
+8 Nov & Freeze a representative, privacy-screened test set with reference outcomes and a baseline evaluation.\\
+9--22 Nov & Attend the mandatory live demonstration in weeks 46--47; log observed failures and feedback.\\
+By 25 Nov & Complete two fault classes, implement repairs and rerun all regression cases; revise architecture to match the built system.\\
+26 Nov--2 Dec & Final quantitative and qualitative analysis, eight genuine meeting records, report editing and reproduction check.\\
+3 Dec, 11:59 & Submit the 7--8-page white paper via Wiseflow; tag the submitted public repository commit \texttt{exam} and preserve it.\\
+\bottomrule
+\end{tabularx}
+\caption{Proposed milestones; intermediate dates are group planning targets.}
+\end{table}
+
+The main risk is plausible output without valid support. A review gate remains
+mandatory while broader reference cases and stronger evidence checks are developed.
+Missing or conflicting deadlines must not be silently resolved. The examination
+test set should include ordinary notices, absent dates, ambiguous years, multiple
+dates, closed notices, and out-of-scope material. Format and date properties belong
+in deterministic checks; meaning and clarity need a documented human assessment.
+An LLM judge would be supplementary and would require its own sanity checks.
+
+The planned stress classes are \textbf{input perturbation} and
+\textbf{dependency failure}. Input tests will embed misleading instructions and
+conflicting facts in synthetic notices. Dependency tests will simulate a refused
+connection, timeout, or malformed model response. We will record the failure path,
+repair the responsible stage, and demonstrate that the same case and the rest of
+the regression set pass afterwards. These experiments are plans, not completed
+security results.
+
+Source changes and reuse uncertainty limit future ingestion. Until an acceptable
+source policy and screening procedure are established, use selected minimal inputs
+and synthetic fixtures. Further exam work includes explicit read/write permissions,
+secret exclusion, an enforced total token budget, and a measurable halt policy.
+A proposed halt gate is three consecutive invalid runs, followed by operator review;
+it is not implemented yet. Team availability is a schedule risk, so meetings should
+be short, recorded, and frequent enough to support at least eight genuine records.
+Human decisions must remain visible: source selection, evidence assessment,
+publication approval, and corrections to agent-generated code and report text.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem[Hamar kommune(2026)]{hamar}
+Hamar kommune. Oppstart reguleringsplan fv. 187 Ringgata i Hamar.
+Published/modified 26 October 2026; accessed 28 October 2026.
+\url{https://www.hamar.kommune.no/lokaldemokrati/oppstart-reguleringsplan-fv-187-ringgata-i-hamar}.
+\bibitem[University of Inland Norway(2026)]{brief}
+University of Inland Norway. \emph{Agentic Workflows for Innlandet: Building and
+Verifying Coding Agent Harnesses for Local Needs}. KIUA-2003 project brief,
+Autumn 2026. Supplied course document.
+\bibitem[Ollama(2026)]{ollama}
+Ollama. Generate a response: local generation API documentation. Accessed
+28 October 2026. \url{https://docs.ollama.com/api/generate}.
+\end{thebibliography}
+
+\appendix
+\section{Agent prompt excerpts and corrections}
+This appendix contains representative excerpts from the student's actual assistant
+conversations. They document assistance, not completed human approval of the draft.
+The excerpt section occupies one page, within the two-page prompt-log limit.
+
+\paragraph{Problem selection and time constraints.}
+Kai asked for an idea that was ``relatively easy to pull off but still relevant
+and good enough for a great exam/grade.'' Codex proposed a narrow Hamar
+planning-consultation brief and identified source access as a check before building.
+Kai agreed to proceed with source investigation. The resulting scope is a selected
+planning notice, rather than a general news service or multi-source crawler.
+
+\paragraph{Challenging the first specification.}
+Kai brought Claude's review: ``Evidence per field'' and ``How to respond'' were
+missing from the output contract. Codex added keyed evidence and a separate official
+response route. Claude proposed comparing deadline with retrieval date. Codex
+challenged that detail: a notice can expire after retrieval, so a separate current
+check date is required. The inherited skeleton still used retrieval date; the
+working copy corrects this and tests the before/on/after boundaries.
+
+\paragraph{Preserving an observed failure.}
+Claude's handoff said that the skeleton had run only on synthetic fixtures and that
+the Ollama backend was untested. Codex reproduced the tests, then demonstrated a
+numeric-deadline crash. The repair rejects malformed values without weakening the
+existing evidence tests. A real Llama response was rejected as out of scope; its
+invented evidence was preserved rather than edited into a success. The subsequent
+Qwen batch is reported separately.
+
+\paragraph{Authorization and authorship.}
+Kai said, ``You may continue with everything and afterwards demonstrate and or
+present the entirety of compulsory 2 hand in.'' Codex prepared implementation,
+evaluation, report and packaging work under that instruction. Kai later supplied
+the Group 12 membership and the Canvas deadline. Claude and Codex have performed
+substantial coding, testing, execution, and drafting. The report remains an editorial
+draft until the students review and edit its claims. No completed partner review,
+resident interview, or team meeting is inferred from assistant activity.
+
+\clearpage
+\section{Working-session and meeting records}
+These records describe traceable individual working sessions involving Kai and
+assistants. They do not claim that Mohammad attended or that a formal group meeting
+took place. Group meeting records should be added as meetings actually occur.
+
+\subsection{27 October 2026: scope and source investigation}
+\textbf{Participants evidenced:} Kai and Codex in the coursework conversation.
+\textbf{Purpose:} interpret the new brief and choose a feasible Innlandet problem.
+\textbf{Decisions:} investigate a Hamar planning brief, start from selected public
+input, make output checkable, and retain human review. \textbf{Revisions:} a Claude
+review supplied by Kai led to an explicit response route, current check date,
+field-keyed evidence, a scope rule and a failure-report contract.
+\textbf{Open items:} group arrangement, exact Canvas deadline, source reuse and
+the supplied LaTeX template.
+
+\subsection{28 October 2026: handoff, implementation, and evidence}
+\textbf{Participants evidenced:} Kai and Codex, with a Claude handoff supplied by Kai.
+\textbf{Purpose:} inspect the working skeleton and obtain real-run evidence.
+\textbf{Actions:} reproduce seven tests; identify a malformed-deadline crash;
+add four robustness tests; preserve unique outputs; verify a minimal source extract;
+record one rejected Llama run, an earlier five-run Qwen batch, and a final five-run
+Qwen batch after the output-contract change. \textbf{Decisions:} keep deterministic
+drafting and document its departure from the initial plan; keep the injection gap
+visible; publish a reproducible repository under Kai's authorization.
+\textbf{New information:} Kai confirmed Group 12 membership and a Canvas deadline
+of 7 November at 23:59. \textbf{Open actions:} student source/output review, partner
+discussion and contribution confirmation, editorial revision, and checking the
+Canvas-specific template. These actions are pending, not recorded as completed.
+
+\subsection{Plan for genuine group records}
+Schedule short group meetings around 29 October, 2, 5, 9, 12, 16, 23, and 30 November,
+adjusting dates to availability. For each, record actual attendees, alternatives
+considered, decisions, evidence reviewed, and next actions. These are proposed
+dates only; they do not count as completed meeting reports.
+
+\section{Reproduction and editorial status}
+Install Python 3.10+ and Ollama, then pull \texttt{qwen2.5-coder:7b}. From the project
+root, use:
+\begin{lstlisting}
+python run.py --meta examples/ringgata.meta.json --input examples/ringgata.txt --backend ollama --checked-at 2026-10-28
+python -m unittest discover -s tests -v
+python evaluate.py --backend fixture
+python evaluate.py --backend ollama --count 5
+python tools/build_results.py
+\end{lstlisting}
+The date above reproduces the recorded check; a current operational run should pass
+the actual Oslo check date. Fixture mode is offline and uses canned extraction,
+not a real model. \texttt{tools/build\_results.py} regenerates the report table from
+the fixed saved final batch. Clean-clone reproduction is recorded separately in the
+repository when completed.
+
+The report uses the official NeurIPS 2025 style with the preprint option and no
+NeurIPS checklist. No separate Canvas template has been supplied for comparison.
+Students must inspect the source and output, confirm contributions and meeting
+records, and edit the prose before submission. The local source check and generated
+results are assistant work until independently reviewed. This status is preserved
+to avoid claiming activities that have not yet occurred.
+\end{document}
