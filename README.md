@@ -4,7 +4,7 @@ Compulsory 2, KIUA-2003, Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A
 
 A small Python workflow turns selected planning-notice text into a Norwegian draft with field-level evidence, deadline status and an explicit human-review gate. It runs in four stages: load input, extract facts with a local model, format a draft, then check and save. It uses Python's standard library, files and Ollama's local HTTP API. One command performs all stages automatically. There is no automatic external publication.
 
-Status: a working program and student-review draft, updated 29 October 2026. Deadline: **7 November 2026, 23:59**, Canvas file upload. Student source/output review, group contribution confirmation and editorial approval remain pending. The newest revision is local only, as requested; the public repository still has the earlier version. See STUDENT_CHECKLIST.md and docs/REVIEW3_HANDOFF.md.
+Status: a working program and student-review draft, updated 29 October 2026. The course announcement dated 27 October gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Exact cutoff times and accepted upload types still need checking in Canvas. Kai confirmed both students joined Group 12 and agreed to work together. Student source/output review, actual contributions and editorial approval remain pending. The newest revision is local only, as requested; the public repository still has the earlier version. See STUDENT_CHECKLIST.md and docs/REVIEW3_HANDOFF.md.
 
 Public repository: https://github.com/Kaiju77/hamar-planning-brief
 

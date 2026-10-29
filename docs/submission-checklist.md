@@ -1,6 +1,6 @@
 # Compulsory 2: preparation and student-review checklist
 
-Canvas information supplied by Kai: Group 12; deadline 7 November 2026 at 23:59; file upload. Group members: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj. Accepted file extensions have not been confirmed. The repository link is included inside the report, so it can be delivered through a PDF upload.
+Current information supplied by Kai: both students joined Group 12 and agreed to work together. The course announcement dated 27 October gives first deadline 30 October and retake 6 November 2026, superseding the earlier 7 November note. Exact cutoff times and accepted file extensions remain unconfirmed. Group members: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj. The repository link is included in the report.
 
 ## Prepared
 

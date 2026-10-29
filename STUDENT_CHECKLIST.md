@@ -8,7 +8,8 @@ This is a review draft, not a finished submission. Remove or replace each marker
 - [ ] Kai and Mohammad compare both extracts and a saved output against the live source.
 - [ ] Confirm Mohammad's actual contribution and record the first real group meeting. No attendance is invented.
 - [ ] Compare with the Canvas-supplied template. The current style is the official NeurIPS 2025 file, not a verified course-specific copy.
-- [ ] Confirm Canvas accepts PDF, ZIP or another type. Deadline supplied by Kai: 7 November, 23:59.
+- [ ] Confirm Canvas accepts PDF, ZIP or another type and check exact cutoff times. The course announcement says first deadline 30 October and retake 6 November; it does not state times.
+- [x] Kai confirmed both students joined Group 12 in Canvas and agreed to work together. This confirms group membership, not contributions or completed report review.
 - [ ] Check prompt excerpts against the actual messages and add two genuine student challenges.
 - [ ] Review the privacy scan. Institutional contact details and the two author names are intentional; no personal contacts are supplied to the model.
 - [ ] Resolve wider source-reuse/access terms before any crawling or broader redistribution. Public access is not reuse permission.
@@ -35,11 +36,11 @@ Assistant verification of a claim does not tick off the student column. Keep the
 
 ## Report placeholders
 
-- [ ] report/main.tex:259 - [[STUDENT: one real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:262 - [[STUDENT: a second real moment where you challenged or rejected agent output, with a short quote]]
-- [ ] report/main.tex:268 - [[STUDENT: describe what Kai actually checked and changed after reading the report and code]]
-- [ ] report/main.tex:269 - [[STUDENT: describe Mohammad's actual contribution and review; do not claim work he has not done]]
-- [ ] report/main.tex:300 - [[STUDENT: actual meeting date, duration and attendees]]
-- [ ] report/main.tex:301 - [[STUDENT: what each person checked; options discussed; decision and reason; next actions]]
-- [ ] report/main.tex:324 - [[STUDENT: compare with the Canvas template and confirm accepted upload type]]
-- [ ] report/main.tex:325 - [[STUDENT: check both extracts and at least one saved draft against the live Hamar page]]
+- [ ] report/main.tex:260 - [[STUDENT: one real moment where you challenged or rejected agent output, with a short quote]]
+- [ ] report/main.tex:263 - [[STUDENT: a second real moment where you challenged or rejected agent output, with a short quote]]
+- [ ] report/main.tex:269 - [[STUDENT: describe what Kai actually checked and changed after reading the report and code]]
+- [ ] report/main.tex:270 - [[STUDENT: describe Mohammad's actual contribution and review; do not claim work he has not done]]
+- [ ] report/main.tex:303 - [[STUDENT: actual meeting date, duration and attendees]]
+- [ ] report/main.tex:304 - [[STUDENT: what each person checked; options discussed; decision and reason; next actions]]
+- [ ] report/main.tex:327 - [[STUDENT: compare with the Canvas template and confirm accepted upload type]]
+- [ ] report/main.tex:328 - [[STUDENT: check both extracts and at least one saved draft against the live Hamar page]]
