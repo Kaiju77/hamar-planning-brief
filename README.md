@@ -4,7 +4,7 @@ Compulsory 2, KIUA-2003, Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A
 
 A small Python workflow turns selected planning-notice text into a Norwegian draft with field-level evidence, deadline status and an explicit human-review gate. It runs in four stages: load input, extract facts with a local model, format a draft, then check and save. It uses Python's standard library, files and Ollama's local HTTP API. One command performs all stages automatically. There is no automatic external publication.
 
-Status: a working program and student-review draft, updated 29 October 2026. The course announcement gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Kai confirmed PDF is accepted; exact cutoff times remain to be checked. Both students joined Group 12 and agreed to work together. Kai led the preparation with substantial AI help; Mohammad joined late and his review is planned. Kai compared source text with a draft; full student report review remains unfinished.
+Status: a working program and student-review draft, updated 30 October 2026. The course announcement gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Kai confirmed PDF is accepted; exact cutoff times remain to be checked. Both students joined Group 12 and agreed to work together. The group formed late, with separate project ideas already in progress; a shared direction still needs agreement. Kai led this candidate's preparation with substantial AI help and compared source text with a draft. Full student report review remains unfinished.
 
 ## Open on a phone or share for review
 

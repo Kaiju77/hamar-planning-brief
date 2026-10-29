@@ -35,3 +35,7 @@ Kai said the preparation so far was done by Kai and the assistants while Mohamma
 ## 30 October: editorial handoff
 
 The report appendix was polished for partner review. Repeated personal attribution was replaced with neutral excerpt labels and one concise contribution statement. Only actual conversation excerpts were selected; no prompts, results, meetings or contributions were invented. The main technical results were unchanged. The partner guide now asks the group to compare the bus-reporting work and agree a connected project direction before submission. This is a review handoff, not final approval.
+
+### Group wording correction, 30 October
+
+Kai clarified that the group was formed late, not that Mohammad joined this project later. The report now states that separate project ideas were already in progress and the shared direction remains to be agreed. No joint discussion or student review is invented.
