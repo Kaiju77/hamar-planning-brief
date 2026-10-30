@@ -72,7 +72,9 @@ def check(facts, extract, meta):
             except ValueError:
                 errors.append("deadline: impossible date")
             else:
-                if not any(norm(x) in norm(d.get("evidence", "")) for x in date_forms(d["value"])):
+                if not any(re.search(r"(?<!\d)" + re.escape(norm(x)) + r"(?!\d)",
+                                     norm(d.get("evidence", "")))
+                           for x in date_forms(d["value"])):
                     errors.append("deadline: date not stated in its evidence")
     return errors, warnings
 

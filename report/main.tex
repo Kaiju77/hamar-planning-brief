@@ -82,6 +82,8 @@ stage, deadline, participation and response route. Each field has a value and a
 supporting quote. The prompt says to use \texttt{unknown} or \texttt{ambiguous}
 instead of guessing. It also says that source text is data, not instructions.
 The model is \texttt{qwen2.5-coder:7b}, with temperature zero and JSON output.
+This is a practical baseline, not a tested choice of the best model for Norwegian
+extraction. We have not compared models under a fixed evaluation.
 A deadline should become an ISO date only when day, month and year are explicit.
 An official mailbox is allowed; an individual person's contact details are not.
 
@@ -151,10 +153,12 @@ It produced a failure report. Scope rejection stops later checks, so this does
 not show that every invented quote was detected. Five earlier Qwen runs used an
 older field contract and are not added to the table.
 
-Twelve unit tests pass. Seven cover the original synthetic cases: a normal case,
+Thirteen unit tests pass. Seven cover the original synthetic cases: a normal case,
 missing and ambiguous dates, wrong scope, altered evidence and two injection
-outcomes. Five more cover malformed deadlines, date boundaries, missing files,
-separate output folders and an unavailable Ollama service. Fixture evaluation
+outcomes. Six more cover malformed deadlines, date boundaries, missing files,
+separate output folders, an unavailable Ollama service and numeric date matching.
+A review found that 8 November could match inside 18 November. Numeric boundaries
+now block this error; the saved model runs are unchanged. Fixture evaluation
 uses canned model replies. It tests program behaviour, not a live model's ability
 to resist an attack.
 

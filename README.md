@@ -51,7 +51,7 @@ python evaluate.py --backend ollama --example ringgata_extended --count 5 --chec
 python tools/build_results.py
 ```
 
-Twelve unit tests cover the seven original fixture cases and five added robustness cases, including an unavailable Ollama service. The fixture evaluation also deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
+Thirteen unit tests cover the seven original fixture cases and six added robustness cases, including an unavailable Ollama service and date substrings such as 8 November inside 18 November. A 30 October review found and fixed the numeric-boundary bug. Original model runs remain unchanged; this is a checker repair, not a new extraction result. The fixture evaluation still deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
 
 `evaluate.py` preserves every attempt and limits a real batch to five runs. Its reference checks look for selected words and addresses, not full meaning. `tools/build_results.py` regenerates the report table from the two fixed saved batches. It does not replace them with newly run results.
 

@@ -11,6 +11,21 @@ import run
 FX = Path(__file__).parent.parent / 'fixtures'
 
 class Robustness(unittest.TestCase):
+    def test_deadline_requires_whole_numeric_date(self):
+        base = json.loads((FX/'syn_ok.model.json').read_text(encoding='utf-8'))
+        meta = json.loads((FX/'syn_ok.meta.json').read_text(encoding='utf-8'))
+        original = (FX/'syn_ok.txt').read_text(encoding='utf-8')
+        for value, quoted_date in [('2026-11-08', '18. november 2026'),
+                                   ('2026-11-18', '118. november 2026'),
+                                   ('2026-11-18', '18. november 20260')]:
+            with self.subTest(value=value, quoted_date=quoted_date):
+                facts = copy.deepcopy(base)
+                facts['deadline']['value'] = value
+                facts['deadline']['evidence'] = 'Frist for innspill er ' + quoted_date
+                text = original.replace('18. november 2026', quoted_date)
+                errors, _ = checks.check(facts, text, meta)
+                self.assertIn('deadline: date not stated in its evidence', errors)
+
     def test_malformed_deadlines_are_rejected_without_crashing(self):
         base = json.loads((FX/'syn_ok.model.json').read_text(encoding='utf-8'))
         meta = json.loads((FX/'syn_ok.meta.json').read_text(encoding='utf-8'))

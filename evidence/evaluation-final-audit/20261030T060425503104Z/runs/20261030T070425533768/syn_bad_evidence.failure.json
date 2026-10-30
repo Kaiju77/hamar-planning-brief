@@ -1,0 +1,8 @@
+{
+ "status": "failed",
+ "failed_checks": [
+  "deadline: evidence not found in extract"
+ ],
+ "message": "Run requires attention; no draft saved.",
+ "source_url": "https://example.invalid/syntetisk"
+}

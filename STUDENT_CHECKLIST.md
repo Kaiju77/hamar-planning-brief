@@ -33,7 +33,7 @@ This is a review draft, not a finished submission. Complete the checks below bef
 | Batch A has 5 saved drafts, 3,645 tokens and 37.971 seconds | evidence/final-metrics.json and original run.json files | [ ] student check pending |
 | Batch B has 5 saved drafts, 5,108 tokens and 51.176 seconds | evidence/extended-metrics.json and all five raw runs | [ ] student check pending |
 | Batch B misses the office day and leaves response route unknown in 5/5 | All five ringgata_extended.json and raw responses; submission details occur under participation | [ ] student check pending |
-| 12 unit tests pass, while the unsafe injection fixture is still accepted | tests-review3.txt, fixture summary and one rerun | [ ] student check pending |
+| 13 unit tests pass, while the unsafe injection fixture is still accepted | final-audit-tests-20261030.txt, final audit fixture summary and one rerun | [ ] student check pending |
 
 Assistant verification of a claim does not tick off the student column. Keep the source URL, retrieval date and any changes you make in your notes.
 
