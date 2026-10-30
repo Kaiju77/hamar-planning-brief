@@ -1,6 +1,6 @@
 # Compulsory 2: preparation and student-review checklist
 
-Current information supplied by Kai: both students joined Group 12 and agreed to work together. The course announcement dated 27 October gives first deadline 30 October and retake 6 November 2026, superseding the earlier 7 November note. Exact cutoff times and accepted file extensions remain unconfirmed. Group members: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj. The repository link is included in the report.
+Current information supplied by Kai: both students joined Group 12 and agreed to work together. The course announcement dated 27 October gives first deadline 30 October and retake 6 November 2026, superseding the earlier 7 November note. PDF acceptance is confirmed; exact cutoff times and any course-specific template remain unconfirmed. Group members: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj. The repository link is included in the report.
 
 ## Prepared
 
@@ -11,7 +11,7 @@ Current information supplied by Kai: both students joined Group 12 and agreed to
 - Honest individual working-session records, distinguished from partner meetings.
 - Multi-stage skeleton with tools and one-command automation.
 - Minimal real-source example and source metadata; no individual contact details.
-- Twelve passing tests and preserved real-model results; the added test covers an unavailable service.
+- Thirteen passing tests and preserved real-model results, including unavailable-service and full/shortened date-quote regression cases.
 - Known injection weakness and partial-input limitations documented.
 - Model settings, bounded generation, request timeout and later exam controls described accurately.
 

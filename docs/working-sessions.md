@@ -39,3 +39,7 @@ The report appendix was polished for partner review. Repeated personal attributi
 ### Group wording correction, 30 October
 
 Kai clarified that the group was formed late, not that Mohammad joined this project later. The report now states that separate project ideas were already in progress and the shared direction remains to be agreed. No joint discussion or student review is invented.
+
+## 30 October: final handoff corrections
+
+The pre-handoff review found a shortened-quote bypass in the date check. Quote matching now applies numeric boundaries in the source as well as date matching inside the quote. Six regression subcases cover full and shortened quotes, including extra digits; all 13 test functions pass. Ten saved fact objects still pass mechanical checks, and original model runs were not edited. The prompt log now uses the Claude-confirmed "Fix all four" instruction and the checklist matches it. Kai supplied both source and draft and assessed the basic facts; no full report approval or joint meeting is inferred. The late group formation and unfinished shared-project decision remain explicit. A handoff guide was prepared for the partner. No submission was made.

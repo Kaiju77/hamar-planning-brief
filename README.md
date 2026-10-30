@@ -6,7 +6,11 @@ A small Python workflow turns selected planning-notice text into a Norwegian dra
 
 Status: a working program and student-review draft, updated 30 October 2026. The course announcement gives **30 October 2026** as the first deadline and **6 November** as the retake deadline. Kai confirmed PDF is accepted; exact cutoff times remain to be checked. Both students joined Group 12 and agreed to work together. The group formed late, with separate project ideas already in progress; a shared direction still needs agreement. Kai led this candidate's preparation with substantial AI help and compared source text with a draft. Full student report review remains unfinished.
 
-## Open on a phone or share for review
+## Handoff and report files
+
+[Final handoff guide](docs/FINAL_HANDOFF.md): current technical checks, editable files and the remaining group decision.
+
+### Open on a phone or share for review
 
 This is a polished review draft of the planning-notice candidate. The group still needs to agree how it relates to the bus-delay reporting work before submission and continuation to the exam.
 
@@ -51,7 +55,7 @@ python evaluate.py --backend ollama --example ringgata_extended --count 5 --chec
 python tools/build_results.py
 ```
 
-Thirteen unit tests cover the seven original fixture cases and six added robustness cases, including an unavailable Ollama service and date substrings such as 8 November inside 18 November. A 30 October review found and fixed the numeric-boundary bug. Original model runs remain unchanged; this is a checker repair, not a new extraction result. The fixture evaluation still deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
+Thirteen unit tests cover the seven original fixture cases and six added robustness cases, including an unavailable Ollama service and date substrings such as 8 November inside 18 November. A 30 October review found the numeric-boundary bug; the repair checks both the quote inside the source and the date inside the quote, including shortened-quote cases. Original model runs remain unchanged; this is a checker repair, not a new extraction result. The fixture evaluation still deliberately records a known unsafe outcome: a quoted injected date may pass the evidence checker. Passing this expected-behavior test is not a security success. New evaluation output explicitly labels this as `known_unsafe_acceptance`; the original saved summaries retain their historical field names.
 
 `evaluate.py` preserves every attempt and limits a real batch to five runs. Its reference checks look for selected words and addresses, not full meaning. `tools/build_results.py` regenerates the report table from the two fixed saved batches. It does not replace them with newly run results.
 

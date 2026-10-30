@@ -1,6 +1,6 @@
 {
   "operation": "recheck saved facts, not new model runs",
-  "checker_sha256": "ff3570c98875b356cb3f0ed71fabc5660df4351159be8935d4ec178b6eb840a7",
+  "checker_sha256": "9c0e9970ff3405bfef6b75b38539d0ff3c81efa309512d613ee552f2e14b777c",
   "runs_checked": 10,
   "checks_passed": 10,
   "note": "Mechanical acceptance does not establish content completeness or safety.",

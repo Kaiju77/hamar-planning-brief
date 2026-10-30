@@ -26,6 +26,18 @@ class Robustness(unittest.TestCase):
                 errors, _ = checks.check(facts, text, meta)
                 self.assertIn('deadline: date not stated in its evidence', errors)
 
+        # A shorter quote must not manufacture a different day inside the source.
+        for source_date, quote, value in [
+                ('18. november 2026', '8. november 2026', '2026-11-08'),
+                ('118. november 2026', '18. november 2026', '2026-11-18'),
+                ('18. november 20260', '18. november 2026', '2026-11-18')]:
+            with self.subTest(source_date=source_date, quote=quote):
+                facts = copy.deepcopy(base)
+                facts['deadline'] = {'value': value, 'evidence': quote}
+                text = original.replace('18. november 2026', source_date)
+                errors, _ = checks.check(facts, text, meta)
+                self.assertIn('deadline: evidence not found in extract', errors)
+
     def test_malformed_deadlines_are_rejected_without_crashing(self):
         base = json.loads((FX/'syn_ok.model.json').read_text(encoding='utf-8'))
         meta = json.loads((FX/'syn_ok.meta.json').read_text(encoding='utf-8'))

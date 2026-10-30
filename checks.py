@@ -59,7 +59,7 @@ def check(facts, extract, meta):
             errors.append(f"{f}: empty value must be unknown or ambiguous")
         if not ev and v['value'] not in ('unknown', 'ambiguous'):
             errors.append(f"{f}: claim without evidence")
-        elif ev and norm(ev) not in text:
+        elif ev and not re.search(r"(?<!\d)" + re.escape(norm(ev)) + r"(?!\d)", text):
             errors.append(f"{f}: evidence not found in extract")
     d = facts.get("deadline", {})
     if isinstance(d, dict) and isinstance(d.get("value"), str) and isinstance(d.get("evidence"), str) and d.get("value") not in ("unknown", "ambiguous"):

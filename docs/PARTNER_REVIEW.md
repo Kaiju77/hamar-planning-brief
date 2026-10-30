@@ -1,5 +1,7 @@
 # Mohammad: quick review before submission
 
+Latest handoff and final technical checks: [FINAL_HANDOFF.md](FINAL_HANDOFF.md). No further AI-review round is planned.
+
 Group 12: Kai Arne Hage and Mohammad Almojtaba Elhajj A Elhajj.
 
 This draft presents a working planning-notice workflow, its test results and its limitations. Kai led the initial preparation with substantial AI assistance. The next step is to agree the shared direction and review the draft together.

@@ -48,18 +48,15 @@ extended_report={'batch':EXTENDED.relative_to(ROOT).as_posix(),'runs':len(extrow
                  'drafts_saved':saved,'total_tokens':token_total,'wall_seconds_sum':seconds,
                  'reference_proxy_counts':counts}
 (ROOT/'evidence/extended-metrics.json').write_text(json.dumps(extended_report,indent=2)+'\n',encoding='utf-8')
-findings=(f'Batch B used {token_total} tokens and {seconds:.3f} seconds. '
-          f'All {saved} attempts saved drafts, but the office-day and date/time checks passed in '
-          f"{counts['participation_office_day']}/5 and {counts['participation_date_time']}/5 runs. "
-          f"The route mailbox/case and postal-address checks passed in {counts['response_mailbox_and_case']}/5 "
-          f"and {counts['response_postal_address']}/5. "
-          'The model put the submission details in participation, left response route unknown, '
-          'and omitted the office day. The longer input therefore failed our content goal even '
-          'though the code accepted it. These attempts are kept as failures of completeness, '
-          'not hidden or counted as successful summaries.\n\n'
+findings=(f'Batch B used {token_total:,} tokens and {seconds:.3f} seconds. '
+          f'All {saved} attempts saved drafts and passed the code checks. '
+          f"The office-day check passed in {counts['participation_office_day']}/5 runs, "
+          f"and the route mailbox/case check passed in {counts['response_mailbox_and_case']}/5. "
+          'The submission details appeared under participation, while response route stayed unknown. '
+          'We count all five drafts as incomplete.\n\n'
           'A likely cause is our own prompt. It says the official submission route may go under '
           'participation, it never defines participation as events such as an office day, and it '
-          'does not mention office days. So the prompt allowed this choice by the model. '
+          'does not mention office days. Our prompt allowed this. '
           'We have not changed the prompt or rerun, so we cannot say how much a clearer prompt '
           'would help. The saved Norwegian drafts also contradict themselves: the line on what '
           'a resident can do contains the mailbox and address, while the next line says the '

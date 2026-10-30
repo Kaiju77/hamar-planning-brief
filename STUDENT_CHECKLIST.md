@@ -13,7 +13,7 @@ This is a review draft, not a finished submission. Complete the checks below bef
 - [x] Kai confirmed PDF upload is accepted.
 - [ ] Check exact cutoff times in Canvas. The announcement says first deadline 30 October and retake 6 November; it does not state times.
 - [x] Kai confirmed both students joined Group 12 in Canvas and agreed to work together. This confirms group membership, not contributions or completed report review.
-- [x] Two genuine Kai questions are included from the chat: the hypothetical Oslo example and why a known issue could not be fixed. They are questions about explanations, not invented code repairs.
+- [x] The prompt log uses genuine supplied excerpts. The four-fix instruction is "Fix all four" from the Claude session; the repair/evidence question is from the Codex chat. No Oslo excerpt is included in this version.
 - [ ] Review the privacy scan. Institutional contact details and the two author names are intentional; no personal contacts are supplied to the model.
 - [ ] Resolve wider source-reuse/access terms before any crawling or broader redistribution. Public access is not reuse permission.
 - [ ] After final student edits, publish the approved revision and check its public PDF/code links. Kai authorized publishing the current review copy for phone access; this is not final submission approval.
@@ -33,10 +33,10 @@ This is a review draft, not a finished submission. Complete the checks below bef
 | Batch A has 5 saved drafts, 3,645 tokens and 37.971 seconds | evidence/final-metrics.json and original run.json files | [ ] student check pending |
 | Batch B has 5 saved drafts, 5,108 tokens and 51.176 seconds | evidence/extended-metrics.json and all five raw runs | [ ] student check pending |
 | Batch B misses the office day and leaves response route unknown in 5/5 | All five ringgata_extended.json and raw responses; submission details occur under participation | [ ] student check pending |
-| 13 unit tests pass, while the unsafe injection fixture is still accepted | final-audit-tests-20261030.txt, final audit fixture summary and one rerun | [ ] student check pending |
+| 13 unit tests pass, while the unsafe injection fixture is still accepted | handoff-final-tests-20261030.txt, final fixture summary and one rerun | [ ] student check pending |
 
 Assistant verification of a claim does not tick off the student column. Keep the source URL, retrieval date and any changes you make in your notes.
 
 ## Report drafting markers resolved with factual text
 
-The eight template markers have been replaced with verified prompt excerpts, a partial-review account, the late group formation, and explicit unfinished tasks. Removing template markers does not mark student review or meetings complete. Mohammad has not been credited with implementation work. His review is planned. Kai will read the main report tomorrow.
+The eight template markers have been replaced with verified prompt excerpts, a partial-review account, the late group formation, and explicit unfinished tasks. Removing template markers does not mark student review or meetings complete. Mohammad has not been credited with implementation work. His review is planned. Full student report review remains to be completed before final approval.

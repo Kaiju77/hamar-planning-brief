@@ -28,8 +28,7 @@ part. A local model extracts facts and quotes. Python formats the draft and chec
 it before saving. Five runs on a 21-word extract passed the checks. Five more runs
 on a longer extract also passed, but missed important information. This shows that
 passing the checks does not mean the draft is complete. We describe the current
-program, its limits, and what we plan to improve before the exam. Students still
-need to review and edit this draft.
+program, its limits, and what we plan to improve before the exam.
 \end{abstract}
 
 \section{Problem and what counts as success}
@@ -51,7 +50,8 @@ route. The full page does contain these details. A second, 61-word input adds th
 institutional mailbox, postal address, case number and open office day. Both inputs
 are selected passages, not full notices. They contain no individual names or
 personal contact details. The page was fetched again on 29 October, and the new
-passages were checked against that response. Student source review is still pending.
+passages were checked against that response. The draft must still be compared
+with the full notice before anyone relies on it.
 No general permission to crawl or redistribute the site has been established.
 
 \textbf{Success for the first input} means finding the cycleway and pavement, both
@@ -149,8 +149,8 @@ does not guarantee the same answer on another machine or model version.
 
 Earlier attempts are kept separately. One \texttt{llama3.2:3b} response rejected
 the notice as outside the scope and returned invented quotes and a non-ISO date.
-It produced a failure report. Scope rejection stops later checks, so this does
-not show that every invented quote was detected. Five earlier Qwen runs used an
+It produced a failure report. Because the model rejected the notice, the quote
+checks did not run. Five earlier Qwen runs used an
 older field contract and are not added to the table.
 
 Thirteen unit tests pass. Seven cover the original synthetic cases: a normal case,
@@ -158,7 +158,9 @@ missing and ambiguous dates, wrong scope, altered evidence and two injection
 outcomes. Six more cover malformed deadlines, date boundaries, missing files,
 separate output folders, an unavailable Ollama service and numeric date matching.
 A review found that 8 November could match inside 18 November. Numeric boundaries
-now block this error; the saved model runs are unchanged. Fixture evaluation
+now check both the quote in the source and the date in the quote. Tests cover full
+and shortened quotes; other date formats and conflicting dates remain future work.
+The saved model runs are unchanged. Fixture evaluation
 uses canned model replies. It tests program behaviour, not a live model's ability
 to resist an attack.
 
@@ -256,7 +258,7 @@ separate. This allows the same saved text to be checked again later.
 results do not replace that failure.
 
 \paragraph{Checking the failure explanation.}
-\textbf{Prompt:} ``Read \texttt{docs/CLAUDE\_REVIEW3.md} and address the must-fix findings?''
+\textbf{Prompt:} ``Fix all four''.
 \textbf{Reviewed changes:} the report identifies overlapping prompt definitions as
 a likely cause, explains the contradictory draft, separates saving from content
 success in the table, and explains the raw log flag. The saved runs were not changed.
